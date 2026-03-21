@@ -1,0 +1,70 @@
+{
+  "SYSBP": {
+    "code": "8480-6",
+    "display": "Systolic blood pressure"
+  },
+  "DIABP": {
+    "code": "8462-4",
+    "display": "Diastolic blood pressure"
+  },
+  "HR": {
+    "code": "8867-4",
+    "display": "Heart rate"
+  },
+  "TEMP": {
+    "code": "8310-5",
+    "display": "Body temperature"
+  },
+  "WEIGHT": {
+    "code": "29463-7",
+    "display": "Body weight"
+  },
+  "HEIGHT": {
+    "code": "8302-2",
+    "display": "Body height"
+  },
+  "ALT": {
+    "code": "1742-6",
+    "display": "ALT [U/L]"
+  },
+  "AST": {
+    "code": "1920-8",
+    "display": "AST [U/L]"
+  },
+  "BILI": {
+    "code": "1975-2",
+    "display": "Bilirubin total [mg/dL]"
+  },
+  "CREAT": {
+    "code": "2160-0",
+    "display": "Creatinine [mg/dL]"
+  },
+  "WBC": {
+    "code": "6690-2",
+    "display": "WBC [#/volume]"
+  },
+  "ANC": {
+    "code": "751-8",
+    "display": "Neutrophils [#/volume]"
+  },
+  "HGB": {
+    "code": "718-7",
+    "display": "Hemoglobin [g/dL]"
+  },
+  "PLT": {
+    "code": "777-3",
+    "display": "Platelets [#/volume]"
+  },
+  "ALB": {
+    "code": "1751-7",
+    "display": "Albumin [g/dL]"
+  },
+  "LDH": {
+    "code": "2532-0",
+    "display": "LDH [U/L]"
+  },
+  "TSH": {
+    "code": "3016-3",
+    "display": "TSH [mIU/L]"
+  }
+}

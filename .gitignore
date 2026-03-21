@@ -1,0 +1,59 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+.venv/
+venv/
+env/
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment & Secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.cert
+*.p12
+service-account*.json
+credentials*.json
+*secret*.json
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Claude Code
+.claude/
+
+# Data (large generated files - regenerate with pipeline)
+data/fhir_bundles/
+data/synthetic/*.csv
+
+# Docker volumes
+hapi-fhir/pgdata/
+
+# Misc
+*.log
+.coverage
+htmlcov/
+.pytest_cache/

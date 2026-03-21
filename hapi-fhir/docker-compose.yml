@@ -1,0 +1,43 @@
+version: "3.8"
+
+services:
+  hapi-fhir-postgres:
+    image: postgres:15
+    container_name: hapi-fhir-postgres
+    environment:
+      POSTGRES_DB: hapi_fhir
+      POSTGRES_USER: fhir_user
+      POSTGRES_PASSWORD: fhir_local_password
+    ports:
+      - "5433:5432"
+    volumes:
+      - hapi-fhir-pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U fhir_user -d hapi_fhir"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  hapi-fhir:
+    image: hapiproject/hapi:v7.4.0
+    container_name: hapi-fhir-server
+    depends_on:
+      hapi-fhir-postgres:
+        condition: service_healthy
+    ports:
+      - "8080:8080"
+    environment:
+      spring.datasource.url: jdbc:postgresql://hapi-fhir-postgres:5432/hapi_fhir
+      spring.datasource.username: fhir_user
+      spring.datasource.password: fhir_local_password
+      spring.datasource.driverClassName: org.postgresql.Driver
+      spring.jpa.properties.hibernate.dialect: org.hibernate.dialect.PostgreSQLDialect
+      hapi.fhir.allow_multiple_delete: "true"
+      hapi.fhir.allow_external_references: "true"
+      hapi.fhir.cors.allowed_origin_patterns: "*"
+      hapi.fhir.cors.allow_credentials: "true"
+      hapi.fhir.enable_index_missing_fields: "true"
+      hapi.fhir.tester.home.server_address: http://localhost:8080/fhir
+
+volumes:
+  hapi-fhir-pgdata:

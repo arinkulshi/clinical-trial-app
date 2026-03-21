@@ -1,0 +1,81 @@
+{
+  "protocol_id": "ONCO-2024-PD1-301",
+  "title": "A Phase III, Randomized, Open-Label Study of Pembrolizumab versus Platinum-Based Chemotherapy for First-Line Treatment of Advanced NSCLC",
+  "phase": "Phase III",
+  "indication": "Advanced Non-Small Cell Lung Cancer (Stage IIIB/IV)",
+  "sponsor": "Oncology Research Corp",
+  "arms": [
+    {
+      "code": "PEMBRO",
+      "name": "Pembrolizumab 200mg IV Q3W",
+      "type": "Experimental"
+    },
+    {
+      "code": "CHEMO",
+      "name": "Carboplatin AUC5 + Paclitaxel 175mg/m2 IV Q3W",
+      "type": "Active Comparator"
+    }
+  ],
+  "enrollment": {
+    "target": 200,
+    "start_date": "2024-01-15"
+  },
+  "sites": [
+    {
+      "site_id": "SITE-01",
+      "name": "Memorial Cancer Center",
+      "city": "Houston",
+      "state": "TX",
+      "country": "US"
+    },
+    {
+      "site_id": "SITE-02",
+      "name": "Pacific Oncology Institute",
+      "city": "Los Angeles",
+      "state": "CA",
+      "country": "US"
+    },
+    {
+      "site_id": "SITE-03",
+      "name": "Northeast Cancer Research",
+      "city": "Boston",
+      "state": "MA",
+      "country": "US"
+    },
+    {
+      "site_id": "SITE-04",
+      "name": "Midwest Clinical Trials",
+      "city": "Chicago",
+      "state": "IL",
+      "country": "US"
+    },
+    {
+      "site_id": "SITE-05",
+      "name": "Southeast Oncology Group",
+      "city": "Atlanta",
+      "state": "GA",
+      "country": "US"
+    },
+    {
+      "site_id": "SITE-06",
+      "name": "Rocky Mountain Cancer Center",
+      "city": "Denver",
+      "state": "CO",
+      "country": "US"
+    },
+    {
+      "site_id": "SITE-07",
+      "name": "Bay Area Oncology Research",
+      "city": "San Francisco",
+      "state": "CA",
+      "country": "US"
+    },
+    {
+      "site_id": "SITE-08",
+      "name": "Atlantic Cancer Institute",
+      "city": "Philadelphia",
+      "state": "PA",
+      "country": "US"
+    }
+  ]
+}
