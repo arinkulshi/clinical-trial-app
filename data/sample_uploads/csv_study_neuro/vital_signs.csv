@@ -1,0 +1,20 @@
+SUBJID,VSTESTCD,VSTEST,VSORRES,VSORRESU,VSDTC,VISITNUM,VSBLFL
+SUBJ-001,SYSBP,Systolic Blood Pressure,140.0,mmHg,2024-06-01,1,Y
+SUBJ-001,DIABP,Diastolic Blood Pressure,88.0,mmHg,2024-06-01,1,Y
+SUBJ-001,HR,Heart Rate,76.0,beats/min,2024-06-01,1,Y
+SUBJ-001,TEMP,Temperature,36.6,C,2024-06-01,1,Y
+SUBJ-001,SYSBP,Systolic Blood Pressure,136.0,mmHg,2024-07-01,2,
+SUBJ-001,DIABP,Diastolic Blood Pressure,84.0,mmHg,2024-07-01,2,
+SUBJ-001,HR,Heart Rate,72.0,beats/min,2024-07-01,2,
+SUBJ-002,SYSBP,Systolic Blood Pressure,125.0,mmHg,2024-06-05,1,Y
+SUBJ-002,DIABP,Diastolic Blood Pressure,80.0,mmHg,2024-06-05,1,Y
+SUBJ-002,HR,Heart Rate,82.0,beats/min,2024-06-05,1,Y
+SUBJ-002,TEMP,Temperature,36.8,C,2024-06-05,1,Y
+SUBJ-002,SYSBP,Systolic Blood Pressure,130.0,mmHg,2024-07-05,2,
+SUBJ-002,HR,Heart Rate,78.0,beats/min,2024-07-05,2,
+SUBJ-003,SYSBP,Systolic Blood Pressure,115.0,mmHg,2024-06-10,1,Y
+SUBJ-003,DIABP,Diastolic Blood Pressure,72.0,mmHg,2024-06-10,1,Y
+SUBJ-003,HR,Heart Rate,65.0,beats/min,2024-06-10,1,Y
+SUBJ-003,SYSBP,Systolic Blood Pressure,118.0,mmHg,2024-07-10,2,
+SUBJ-003,DIABP,Diastolic Blood Pressure,74.0,mmHg,2024-07-10,2,
+SUBJ-003,HR,Heart Rate,68.0,beats/min,2024-07-10,2,
