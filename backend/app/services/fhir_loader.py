@@ -52,23 +52,39 @@ def transform_and_load(
     # Load LOINC map if available
     loinc_map = _load_loinc_map()
 
-    # Build study metadata dict
+    # Build study metadata dict matching pipeline/transform_study.py expectations
+    demo_df = domain_dataframes.get("demographics")
+
+    # Extract unique arms from demographics
+    arms = []
+    if demo_df is not None and "ARM" in demo_df.columns:
+        for i, arm_code in enumerate(demo_df["ARM"].dropna().unique()):
+            arms.append({
+                "code": arm_code,
+                "name": arm_code,
+                "type": "Experimental" if i == 0 else "Active Comparator",
+            })
+    if not arms:
+        arms = [{"code": "ARM1", "name": "Arm 1", "type": "Experimental"}]
+
     metadata = {
         "protocol_id": study_name,
         "title": study_name,
         "phase": "phase-3",
         "status": "active",
         "description": f"Uploaded study: {study_name}",
+        "indication": "Clinical Trial",
         "sponsor": "Unknown",
+        "enrollment": {"target": len(demo_df) if demo_df is not None else 0},
+        "arms": arms,
         "sites": [],
     }
 
     # Extract unique sites from demographics
-    demo_df = domain_dataframes.get("demographics")
     if demo_df is not None and "SITEID" in demo_df.columns:
         site_ids = demo_df["SITEID"].dropna().unique()
         metadata["sites"] = [
-            {"id": sid, "name": f"Site {sid}", "city": "Unknown", "state": "Unknown"}
+            {"site_id": sid, "name": f"Site {sid}", "city": "Unknown", "state": "Unknown", "country": "US"}
             for sid in site_ids
         ]
 
@@ -82,8 +98,13 @@ def transform_and_load(
         count = _post_bundle(session, server_url, study_bundle)
         total_resources += count
 
-        # Try to extract ResearchStudy ID from response
+        # Extract the server-assigned ResearchStudy ID so patient bundles
+        # can reference it by absolute URL instead of the urn:uuid placeholder.
         research_study_id = _extract_study_id(session, server_url, study_name)
+        if research_study_id:
+            study_ref = f"ResearchStudy/{research_study_id}"
+        else:
+            study_ref = study_url  # fallback to urn:uuid (may fail)
     except Exception as exc:
         errors.append(f"Study bundle failed: {exc}")
         log.error("Study bundle failed: %s", exc)
@@ -103,10 +124,10 @@ def transform_and_load(
     for _, row in demo_df.iterrows():
         subj_id = row.get("SUBJID", "")
         try:
-            patient_entries, patient_url = build_patient_entries(row, study_url)
+            patient_entries, patient_url = build_patient_entries(row, study_ref)
 
             subj_ae = ae_df[ae_df["SUBJID"] == subj_id] if "SUBJID" in ae_df.columns else pd.DataFrame()
-            ae_entries = build_ae_entries(subj_ae, patient_url, study_url)
+            ae_entries = build_ae_entries(subj_ae, patient_url, study_ref)
 
             subj_vs = vs_df[vs_df["SUBJID"] == subj_id] if "SUBJID" in vs_df.columns else pd.DataFrame()
             vs_entries = build_vitals_entries(subj_vs, patient_url, loinc_map)
@@ -115,7 +136,7 @@ def transform_and_load(
             lab_entries = build_lab_entries(subj_lab, patient_url, loinc_map)
 
             subj_med = med_df[med_df["SUBJID"] == subj_id] if "SUBJID" in med_df.columns else pd.DataFrame()
-            med_entries = build_med_entries(subj_med, patient_url, study_url)
+            med_entries = build_med_entries(subj_med, patient_url, study_ref)
 
             subj_disp = disp_df[disp_df["SUBJID"] == subj_id] if "SUBJID" in disp_df.columns else pd.DataFrame()
             disp_entries = build_disposition_entries(subj_disp, patient_url)

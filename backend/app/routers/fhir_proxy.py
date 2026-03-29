@@ -26,6 +26,21 @@ async def _fhir_get(path: str, params: dict | None = None) -> dict:
         return resp.json()
 
 
+async def _get_study_patient_ids(study_id: str) -> list[str]:
+    """Get all Patient IDs enrolled in a study via ResearchSubject."""
+    bundle = await _fhir_get(
+        "ResearchSubject",
+        {"study": f"ResearchStudy/{study_id}", "_count": "500"},
+    )
+    patient_ids = []
+    for entry in bundle.get("entry", []):
+        ref = entry.get("resource", {}).get("individual", {}).get("reference", "")
+        if ref:
+            patient_ids.append(ref)
+    return patient_ids
+
+
+
 # ── Studies ─────────────────────────────────────────────────────────────
 
 
@@ -62,10 +77,15 @@ async def get_study_adverse_events(
     study_id: str,
     _count: int = Query(1000, alias="count"),
 ):
-    """Get all adverse events for a study."""
+    """Get all adverse events for patients in a study."""
+    patient_ids = await _get_study_patient_ids(study_id)
+    if not patient_ids:
+        return {"resourceType": "Bundle", "type": "searchset", "total": 0, "entry": []}
+    # HAPI FHIR supports comma-separated subject references
+    subject_param = ",".join(patient_ids)
     return await _fhir_get(
         "AdverseEvent",
-        {"study": f"ResearchStudy/{study_id}", "_count": str(_count)},
+        {"subject": subject_param, "_count": str(_count)},
     )
 
 
@@ -76,11 +96,14 @@ async def get_study_observations(
     _count: int = Query(1000, alias="count"),
 ):
     """Get observations (vitals/labs) for patients in a study."""
+    patient_ids = await _get_study_patient_ids(study_id)
+    if not patient_ids:
+        return {"resourceType": "Bundle", "type": "searchset", "total": 0, "entry": []}
     params: dict[str, str] = {"_count": str(_count)}
     if category:
         params["category"] = category
-    # Use _has to filter observations belonging to study patients
-    params["_has:ResearchSubject:individual:study"] = f"ResearchStudy/{study_id}"
+    # Query by patient references from the study
+    params["subject"] = ",".join(patient_ids)
     return await _fhir_get("Observation", params)
 
 
