@@ -31,10 +31,11 @@ export default function VitalSignsTrend({ observations, patientArms }) {
   const chartData = useMemo(() => {
     const obs = observations || [];
 
-    // Filter to selected vital sign
+    // Filter to selected vital sign (match against display name and LOINC code)
     const vitalObs = obs.filter((o) => {
-      const code = (o.code || o.testName || '').toUpperCase();
-      return vitalConfig.codes.some((c) => code.includes(c));
+      const label = (o.display || o.testName || '').toUpperCase();
+      const loincCode = (o.code || '');
+      return vitalConfig.codes.some((c) => label.includes(c) || loincCode === c);
     });
 
     if (vitalObs.length === 0) return [];

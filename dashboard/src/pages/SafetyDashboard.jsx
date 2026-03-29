@@ -23,7 +23,7 @@ import VitalSignsTrend from '../components/safety/VitalSignsTrend';
 const DEFAULT_FILTERS = { arm: 'All', grade: 'All', soc: 'All' };
 
 export default function SafetyDashboard() {
-  const { selectedStudyId } = useStudy();
+  const { selectedStudyId, loading: studyLoading } = useStudy();
   const [filters, setFilters] = useState(DEFAULT_FILTERS);
 
   // Fetch patients (ResearchSubject) for arm assignment
@@ -33,7 +33,10 @@ export default function SafetyDashboard() {
     error: patientsError,
     refetch: refetchPatients,
   } = useFhirQuery(
-    useCallback(() => fhirApi.getStudyPatients(selectedStudyId), [selectedStudyId]),
+    useCallback(
+      () => selectedStudyId ? fhirApi.getStudyPatients(selectedStudyId) : Promise.resolve(null),
+      [selectedStudyId]
+    ),
     [selectedStudyId]
   );
 
@@ -44,7 +47,10 @@ export default function SafetyDashboard() {
     error: aeError,
     refetch: refetchAE,
   } = useFhirQuery(
-    useCallback(() => fhirApi.getStudyAdverseEvents(selectedStudyId), [selectedStudyId]),
+    useCallback(
+      () => selectedStudyId ? fhirApi.getStudyAdverseEvents(selectedStudyId) : Promise.resolve(null),
+      [selectedStudyId]
+    ),
     [selectedStudyId]
   );
 
@@ -56,7 +62,7 @@ export default function SafetyDashboard() {
     refetch: refetchLab,
   } = useFhirQuery(
     useCallback(
-      () => fhirApi.getStudyObservations(selectedStudyId, 'laboratory', 5000),
+      () => selectedStudyId ? fhirApi.getStudyObservations(selectedStudyId, 'laboratory', 5000) : Promise.resolve(null),
       [selectedStudyId]
     ),
     [selectedStudyId]
@@ -70,7 +76,7 @@ export default function SafetyDashboard() {
     refetch: refetchVitals,
   } = useFhirQuery(
     useCallback(
-      () => fhirApi.getStudyObservations(selectedStudyId, 'vital-signs', 5000),
+      () => selectedStudyId ? fhirApi.getStudyObservations(selectedStudyId, 'vital-signs', 5000) : Promise.resolve(null),
       [selectedStudyId]
     ),
     [selectedStudyId]
@@ -146,10 +152,18 @@ export default function SafetyDashboard() {
     if (vitalsError) refetchVitals();
   };
 
-  if (isLoading) {
+  if (studyLoading || isLoading) {
     return (
       <div className="flex items-center justify-center h-96">
         <LoadingSpinner />
+      </div>
+    );
+  }
+
+  if (!selectedStudyId) {
+    return (
+      <div className="p-6">
+        <ErrorMessage message="No study found. Please load data into the FHIR server first." />
       </div>
     );
   }

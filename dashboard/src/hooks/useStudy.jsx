@@ -13,6 +13,14 @@ export function StudyProvider({ children }) {
     fhirApi.getStudies()
       .then((bundle) => {
         const entries = extractEntries(bundle);
+        // Sort so "Phase III Randomized Open Label" study appears first
+        entries.sort((a, b) => {
+          const aMatch = /phase\s*III.*randomized.*open.?label/i.test(a.title || '');
+          const bMatch = /phase\s*III.*randomized.*open.?label/i.test(b.title || '');
+          if (aMatch && !bMatch) return -1;
+          if (!aMatch && bMatch) return 1;
+          return 0;
+        });
         setStudies(entries);
         if (entries.length > 0 && !selectedStudyId) {
           setSelectedStudyId(entries[0].id);

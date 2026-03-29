@@ -48,10 +48,10 @@ export default function LabShiftPlot({ observations, patientArms }) {
   const { pembroData, chemoData } = useMemo(() => {
     const obs = observations || [];
 
-    // Filter observations matching selected lab test
+    // Filter observations matching selected lab test (match against display name, not LOINC code)
     const labObs = obs.filter((o) => {
-      const code = (o.code || o.testName || '').toUpperCase();
-      return code.includes(selectedLab);
+      const label = (o.display || o.testName || '').toUpperCase();
+      return label.includes(selectedLab);
     });
 
     // Group by patient

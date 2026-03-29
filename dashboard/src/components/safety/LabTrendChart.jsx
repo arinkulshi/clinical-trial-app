@@ -34,10 +34,10 @@ export default function LabTrendChart({ observations, patientArms }) {
   const chartData = useMemo(() => {
     const obs = observations || [];
 
-    // Filter to selected lab
+    // Filter to selected lab (match against display name, not LOINC code)
     const labObs = obs.filter((o) => {
-      const code = (o.code || o.testName || '').toUpperCase();
-      return code.includes(selectedLab);
+      const label = (o.display || o.testName || '').toUpperCase();
+      return label.includes(selectedLab);
     });
 
     if (labObs.length === 0) return [];

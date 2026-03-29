@@ -70,12 +70,12 @@ export default function PatientJourney() {
     const entries = extractEntries(patientListData);
     const arms = getPatientArms(entries);
     return entries
-      .filter((e) => e.resource?.resourceType === 'Patient')
+      .filter((e) => e.resourceType === 'Patient')
       .map((e) => {
-        const parsed = parsePatient(e.resource);
+        const parsed = parsePatient(e);
         return {
           ...parsed,
-          arm: arms[parsed.id] || 'Unknown',
+          arm: arms[parsed.id] || arms[`Patient/${parsed.id}`] || 'Unknown',
         };
       });
   }, [patientListData]);
@@ -108,7 +108,13 @@ export default function PatientJourney() {
         };
       }
 
-      const entries = extractEntries(timelineData);
+      // Timeline endpoint returns { adverse_events, observations, medications }
+      // where each is an array of FHIR Bundle entries (with .resource inside)
+      const allEntries = [
+        ...(timelineData.adverse_events || []),
+        ...(timelineData.observations || []),
+        ...(timelineData.medications || []),
+      ];
       const meds = [];
       const aes = [];
       const observations = [];
@@ -124,7 +130,7 @@ export default function PatientJourney() {
         if (latest == null || ms > latest) latest = ms;
       }
 
-      for (const entry of entries) {
+      for (const entry of allEntries) {
         const r = entry.resource;
         if (!r) continue;
 

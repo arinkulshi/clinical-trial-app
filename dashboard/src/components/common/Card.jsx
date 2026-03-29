@@ -1,12 +1,17 @@
+import { isValidElement } from 'react';
 import { Code } from 'lucide-react';
 
-export default function Card({ title, icon: Icon, children, className = '', onShowFhir }) {
+function IconRenderer({ Icon }) {
+  return <Icon className="w-5 h-5 text-blue-600" />;
+}
+
+export default function Card({ title, icon, children, className = '', onShowFhir }) {
   return (
     <div className={`bg-white rounded-xl shadow-sm border border-gray-200 ${className}`}>
       {(title || onShowFhir) && (
         <div className="flex items-center justify-between px-6 py-4 border-b border-gray-100">
           <div className="flex items-center gap-2">
-            {Icon && <Icon className="w-5 h-5 text-blue-600" />}
+            {icon && (isValidElement(icon) ? icon : <IconRenderer Icon={icon} />)}
             {title && <h3 className="text-sm font-semibold text-gray-800">{title}</h3>}
           </div>
           {onShowFhir && (

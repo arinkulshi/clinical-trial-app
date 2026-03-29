@@ -21,6 +21,18 @@ const OVERALL_STATUS = {
     text: 'text-red-800',
     label: 'Validation failed — errors must be fixed',
   },
+  LOADED: {
+    icon: CheckCircle,
+    bg: 'bg-green-50 border-green-200',
+    text: 'text-green-800',
+    label: 'Data loaded into FHIR server successfully',
+  },
+  ERROR: {
+    icon: XCircle,
+    bg: 'bg-red-50 border-red-200',
+    text: 'text-red-800',
+    label: 'Failed to load into FHIR server',
+  },
 };
 
 export default function ValidationReport({ report, onLoad, loadingLoad }) {
@@ -31,7 +43,9 @@ export default function ValidationReport({ report, onLoad, loadingLoad }) {
   const status = report.overall_status || 'VALID';
   const config = OVERALL_STATUS[status] || OVERALL_STATUS.VALID;
   const Icon = config.icon;
-  const isValid = status === 'VALID' || status === 'VALID_WITH_WARNINGS';
+  const isLoadable = status === 'VALID' || status === 'VALID_WITH_WARNINGS' || status === 'ERROR';
+  const isLoaded = status === 'LOADED';
+  const isInvalid = status === 'INVALID';
   const domains = report.domains || {};
 
   return (
@@ -56,8 +70,19 @@ export default function ValidationReport({ report, onLoad, loadingLoad }) {
       </div>
 
       {/* Actions */}
-      {isValid ? (
+      {isLoaded ? (
+        <div className="bg-green-50 border border-green-200 rounded-lg p-4 text-center">
+          <p className="text-green-700 font-medium">Data successfully loaded into the FHIR server.</p>
+        </div>
+      ) : isLoadable ? (
         <div className="bg-white border border-gray-200 rounded-lg p-4 space-y-3">
+          {status === 'ERROR' && (
+            <div className="bg-red-50 border border-red-200 rounded-lg p-3 mb-2">
+              <p className="text-red-700 text-sm">
+                Load failed. Make sure HAPI FHIR is running at the configured URL, then try again.
+              </p>
+            </div>
+          )}
           <label className="block">
             <span className="text-sm font-medium text-gray-700">Study Name</span>
             <input
@@ -79,15 +104,15 @@ export default function ValidationReport({ report, onLoad, loadingLoad }) {
                 Loading into FHIR Server...
               </>
             ) : (
-              'Load into FHIR Server'
+              status === 'ERROR' ? 'Retry Load into FHIR Server' : 'Load into FHIR Server'
             )}
           </button>
         </div>
-      ) : (
+      ) : isInvalid ? (
         <div className="bg-red-50 border border-red-200 rounded-lg p-4 text-center">
           <p className="text-red-700 font-medium">Please fix the errors above and re-upload.</p>
         </div>
-      )}
+      ) : null}
     </div>
   );
 }

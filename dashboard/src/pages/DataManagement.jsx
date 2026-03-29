@@ -20,6 +20,7 @@ export default function DataManagement() {
 
   // Upload tab state
   const [validationReport, setValidationReport] = useState(null);
+  const [lastUploadedFiles, setLastUploadedFiles] = useState(null); // {files, format}
   const [uploading, setUploading] = useState(false);
   const [loadingLoad, setLoadingLoad] = useState(false);
   const [uploadError, setUploadError] = useState(null);
@@ -55,6 +56,7 @@ export default function DataManagement() {
     setUploading(true);
     setUploadError(null);
     setValidationReport(null);
+    setLastUploadedFiles({ files, format });
     try {
       const formData = new FormData();
       formData.append('format', format);
@@ -70,18 +72,34 @@ export default function DataManagement() {
     }
   };
 
-  // Load to FHIR handler
-  const handleLoad = async (datasetId, studyName) => {
+  // Load to FHIR handler — re-sends files to /api/upload/load
+  const handleLoad = async (_datasetId, studyName) => {
+    if (!lastUploadedFiles) {
+      setUploadError('No files available. Please re-upload and validate first.');
+      return;
+    }
     setLoadingLoad(true);
+    setUploadError(null);
     try {
-      await fhirApi.loadDataset(datasetId, studyName);
+      const formData = new FormData();
+      lastUploadedFiles.files.forEach((f) => formData.append('files', f));
+      formData.append('study_name', studyName);
+      const result = await fhirApi.loadToFhir(formData);
+      // result is raw UploadResponse: {dataset_id, status, validation_report, message}
+      const loadStatus = result.status || 'ERROR';
       setValidationReport((prev) =>
-        prev ? { ...prev, overall_status: 'LOADED' } : prev
+        prev ? { ...prev, overall_status: loadStatus } : prev
       );
+      if (loadStatus === 'ERROR') {
+        setUploadError(result.message || 'FHIR load failed. Is HAPI FHIR running?');
+      }
       // Refresh registry
       fetchDatasets();
     } catch (err) {
-      setUploadError(err.message || 'Failed to load into FHIR server');
+      setValidationReport((prev) =>
+        prev ? { ...prev, overall_status: 'ERROR' } : prev
+      );
+      setUploadError(err.message || 'Failed to load into FHIR server. Is HAPI FHIR running?');
     } finally {
       setLoadingLoad(false);
     }
