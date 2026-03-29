@@ -28,10 +28,27 @@ export const fhirApi = {
     client.post('/api/upload/validate', formData, {
       headers: { 'Content-Type': 'multipart/form-data' },
       onUploadProgress: onProgress,
-    }).then(r => r.data),
+    }).then(r => {
+      // Flatten: expose validation_report fields at top level for the UI
+      const data = r.data;
+      const vr = data.validation_report || {};
+      return {
+        dataset_id: data.dataset_id,
+        overall_status: vr.status || data.status,
+        domains: vr.domains || {},
+        total_rows: Object.values(vr.domains || {}).reduce((sum, d) => sum + (d.row_count || 0), 0),
+        message: data.message,
+      };
+    }),
 
   loadDataset: (datasetId, studyName) =>
     client.post(`/api/upload/load/${datasetId}`, { study_name: studyName }).then(r => r.data),
+
+  loadToFhir: (formData) =>
+    client.post('/api/upload/load', formData, {
+      headers: { 'Content-Type': 'multipart/form-data' },
+      timeout: 120000,
+    }).then(r => r.data),
 
   // Datasets
   getDatasets: () => client.get('/api/datasets').then(r => r.data),
