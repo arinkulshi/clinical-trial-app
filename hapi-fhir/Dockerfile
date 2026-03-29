@@ -1,6 +1,9 @@
 FROM hapiproject/hapi:v7.4.0
 
-# Database connection (password injected at runtime via Secret Manager / env var)
+# Database connection
+# For Cloud Run: uses Cloud SQL socket at /cloudsql/<CONNECTION_NAME>
+# For local dev: override spring.datasource.url to jdbc:postgresql://localhost:5432/hapi_fhir
+# URL is overridden at deploy time via --set-env-vars; default for local dev
 ENV spring.datasource.url=jdbc:postgresql://localhost:5432/hapi_fhir
 ENV spring.datasource.username=fhir_user
 ENV spring.datasource.driverClassName=org.postgresql.Driver

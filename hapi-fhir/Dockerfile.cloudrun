@@ -1,0 +1,20 @@
+FROM hapiproject/hapi:v7.4.0
+
+# Use embedded H2 database for Cloud Run POC (no Cloud SQL needed)
+# Data persists within the container instance only
+ENV spring.datasource.url=jdbc:h2:mem:hapi_fhir;DB_CLOSE_DELAY=-1
+ENV spring.datasource.username=sa
+ENV spring.datasource.password=
+ENV spring.datasource.driverClassName=org.h2.Driver
+ENV spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.H2Dialect
+
+# HAPI FHIR configuration
+ENV hapi.fhir.allow_multiple_delete=true
+ENV hapi.fhir.allow_external_references=true
+ENV hapi.fhir.cors.allowed_origin_patterns=*
+ENV hapi.fhir.cors.allow_credentials=true
+ENV hapi.fhir.enable_index_missing_fields=true
+ENV hapi.fhir.tester.home.server_address=http://localhost:8080/fhir
+
+# Increase JVM heap for Cloud Run
+ENV JAVA_TOOL_OPTIONS="-Xmx768m"
