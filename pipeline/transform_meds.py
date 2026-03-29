@@ -53,12 +53,12 @@ def transform_medication(
             "status": "completed",
             "medicationCodeableConcept": medication_concept,
             "subject": {"reference": patient_url},
-            "context": {"reference": study_url, "display": "Study Drug Administration"},
             "effectivePeriod": effective_period,
             "dosage": {
                 "dose": dosage_dose,
                 "route": route,
             },
+            "note": [{"text": "Study Drug Administration"}],
         }
     else:
         resource = {

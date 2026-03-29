@@ -87,7 +87,7 @@ def transform_adverse_event(
 
         suspect_entity.append(
             {
-                "instance": {"reference": study_url, "display": "Study Drug"},
+                "instance": {"display": "Study Drug"},
                 "causality": [
                     {
                         "assessment": {

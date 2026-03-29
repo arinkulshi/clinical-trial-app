@@ -42,10 +42,8 @@ def transform_research_study(
     metadata: dict, org_entries: list[tuple[str, dict]]
 ) -> tuple[str, dict]:
     """Create a single ResearchStudy resource referencing the organizations."""
-    site_refs = [
-        {"reference": full_url, "display": org["name"]}
-        for full_url, org in org_entries
-    ]
+    # Note: ResearchStudy.site expects Reference(Location), not Organization.
+    # Organizations are created as standalone resources; we skip site refs here.
 
     arms = []
     for arm in metadata["arms"]:
@@ -118,7 +116,6 @@ def transform_research_study(
             "display": metadata.get("sponsor", "Oncology Research Corp")
         },
         "arm": arms,
-        "site": site_refs,
     }
 
     return _make_entry(study)
