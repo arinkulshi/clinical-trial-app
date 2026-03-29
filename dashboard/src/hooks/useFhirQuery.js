@@ -12,7 +12,9 @@ export function useFhirQuery(queryFn, deps = []) {
       const result = await queryFn();
       setData(result);
     } catch (err) {
-      setError(err.response?.data?.detail || err.message);
+      const detail = err.response?.data?.detail;
+      const msg = typeof detail === 'string' ? detail : err.message;
+      setError(msg);
     } finally {
       setLoading(false);
     }

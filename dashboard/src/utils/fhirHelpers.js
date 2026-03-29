@@ -44,13 +44,14 @@ export function parseAdverseEvent(ae) {
       || ae.severity?.coding?.[0]?.code,
     outcome: ae.outcome?.coding?.[0]?.display,
     subject: ae.subject?.reference,
+    patientId: ae.subject?.reference,
     date: ae.date || ae.detected,
     startDate: ae.extension?.find(e => e.url?.includes('start-date'))?.valueDateTime || ae.date,
     endDate: ae.extension?.find(e => e.url?.includes('end-date'))?.valueDateTime,
     bodySite: ae.event?.coding?.find(c => c.system?.includes('soc'))?.display,
     soc: ae.extension?.find(e => e.url?.includes('body-system'))?.valueString
       || ae.event?.text || '',
-    raw: ae,
+    _raw: ae,
   };
 }
 
@@ -61,20 +62,25 @@ export function parseObservation(obs) {
   const unit = obs.valueQuantity?.unit || obs.valueQuantity?.code || '';
   const refLow = obs.referenceRange?.[0]?.low?.value;
   const refHigh = obs.referenceRange?.[0]?.high?.value;
+  const displayName = coding.display || obs.code?.text || coding.code;
   return {
     id: obs.id,
     code: coding.code,
-    display: coding.display || obs.code?.text || coding.code,
+    name: displayName,
+    display: displayName,
     value,
     unit,
     date: obs.effectiveDateTime || obs.issued,
     subject: obs.subject?.reference,
+    patientId: obs.subject?.reference,
     category: obs.category?.[0]?.coding?.[0]?.code,
+    testName: displayName,
+    effectiveDate: obs.effectiveDateTime || obs.issued,
     refLow,
     refHigh,
     isAbnormal: value != null && ((refHigh != null && value > refHigh) || (refLow != null && value < refLow)),
     visitNumber: obs.extension?.find(e => e.url?.includes('visit'))?.valueInteger,
-    raw: obs,
+    _raw: obs,
   };
 }
 
@@ -91,7 +97,8 @@ export function parseMedication(med) {
     doseUnit: med.dosage?.dose?.unit,
     route: med.dosage?.route?.coding?.[0]?.display,
     subject: med.subject?.reference,
-    raw: med,
+    patientId: med.subject?.reference,
+    _raw: med,
   };
 }
 
