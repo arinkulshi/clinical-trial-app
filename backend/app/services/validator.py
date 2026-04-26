@@ -436,6 +436,23 @@ def _validate_fhir_json(
             )
             continue
 
+        bundle_type = bundle.get("type", "")
+        if bundle_type != "transaction":
+            errors.append(
+                ValidationError(
+                    row=0,
+                    column="type",
+                    value=bundle_type,
+                    message=(
+                        f"Bundle type must be 'transaction', got '{bundle_type}'. "
+                        "Collection bundles are not supported — each entry must "
+                        "include a 'request' with method and url."
+                    ),
+                    severity="ERROR",
+                )
+            )
+            continue
+
         entries = bundle.get("entry", [])
         row_counts[filename] = len(entries)
 
@@ -448,6 +465,21 @@ def _validate_fhir_json(
                         column="resourceType",
                         value="",
                         message=f"Entry {i} missing resourceType",
+                        severity="ERROR",
+                    )
+                )
+
+            request = entry.get("request")
+            if not request or "method" not in request or "url" not in request:
+                errors.append(
+                    ValidationError(
+                        row=i + 1,
+                        column="request",
+                        value=str(request or ""),
+                        message=(
+                            f"Entry {i} missing 'request' field. Each entry needs "
+                            f'{{"method": "POST", "url": "{resource.get("resourceType", "ResourceType")}"}}'
+                        ),
                         severity="ERROR",
                     )
                 )

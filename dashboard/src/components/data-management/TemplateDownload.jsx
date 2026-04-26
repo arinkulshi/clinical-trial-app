@@ -294,7 +294,7 @@ export default function TemplateDownload() {
             <ul className="text-xs text-blue-700 space-y-1 list-disc pl-4">
               <li><strong>CSV:</strong> Upload 1–6 CSV files. File names must contain a domain keyword (e.g. <code className="bg-blue-100 px-1 rounded">demographics.csv</code>, <code className="bg-blue-100 px-1 rounded">adverse_events.csv</code>).</li>
               <li><strong>Excel:</strong> Upload a single <code className="bg-blue-100 px-1 rounded">.xlsx</code> with sheets named: Demographics, Adverse Events, Vital Signs, Labs, Medications, Disposition.</li>
-              <li><strong>FHIR JSON:</strong> Upload a pre-built FHIR Transaction Bundle <code className="bg-blue-100 px-1 rounded">.json</code> file — loaded directly to HAPI FHIR.</li>
+              <li><strong>FHIR JSON:</strong> Upload a FHIR <strong>Transaction</strong> Bundle <code className="bg-blue-100 px-1 rounded">.json</code> file. The bundle must have <code className="bg-blue-100 px-1 rounded">"type": "transaction"</code> and every entry must include a <code className="bg-blue-100 px-1 rounded">request</code> field (e.g. <code className="bg-blue-100 px-1 rounded">{`{"method":"POST","url":"Patient"}`}</code>). Collection bundles are not supported.</li>
             </ul>
             <p className="text-xs text-blue-600 mt-1">
               <strong>Demographics is required.</strong> All other domains are optional but recommended for a complete dashboard.

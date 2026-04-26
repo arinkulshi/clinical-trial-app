@@ -1,0 +1,157 @@
+{
+  "resourceType": "Bundle",
+  "type": "transaction",
+  "entry": [
+
+
+
+    
+    {
+      "resource": {
+        "resourceType": "ResearchStudy",
+        "id": "study-001",
+        "title": "Hypertension Drug Trial Phase II",
+        "status": "active",
+        "description": "A randomized study evaluating Drug X vs placebo",
+        "phase": "phase-2"
+      },
+      "request": {
+        "method": "POST",
+        "url": "ResearchStudy"
+      }
+    },
+
+    {
+      "resource": {
+        "resourceType": "Patient",
+        "id": "patient-001",
+        "name": [
+          {
+            "use": "official",
+            "family": "Doe",
+            "given": ["John"]
+          }
+        ],
+        "gender": "male",
+        "birthDate": "1965-04-12"
+      },
+      "request": {
+        "method": "POST",
+        "url": "Patient"
+      }
+    },
+
+    {
+      "resource": {
+        "resourceType": "ResearchSubject",
+        "id": "subject-001",
+        "status": "on-study",
+        "study": {
+          "reference": "ResearchStudy/study-001"
+        },
+        "individual": {
+          "reference": "Patient/patient-001"
+        },
+        "assignedArm": "Drug X",
+        "actualArm": "Drug X"
+      },
+      "request": {
+        "method": "POST",
+        "url": "ResearchSubject"
+      }
+    },
+
+    {
+      "resource": {
+        "resourceType": "Condition",
+        "id": "condition-001",
+        "subject": {
+          "reference": "Patient/patient-001"
+        },
+        "code": {
+          "text": "Hypertension"
+        },
+        "clinicalStatus": {
+          "text": "active"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Condition"
+      }
+    },
+
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-001",
+        "status": "final",
+        "category": [
+          {
+            "text": "vital-signs"
+          }
+        ],
+        "code": {
+          "text": "Systolic Blood Pressure"
+        },
+        "subject": {
+          "reference": "Patient/patient-001"
+        },
+        "effectiveDateTime": "2026-03-01T10:00:00Z",
+        "valueQuantity": {
+          "value": 145,
+          "unit": "mmHg"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+
+    {
+      "resource": {
+        "resourceType": "Observation",
+        "id": "obs-002",
+        "status": "final",
+        "code": {
+          "text": "Diastolic Blood Pressure"
+        },
+        "subject": {
+          "reference": "Patient/patient-001"
+        },
+        "effectiveDateTime": "2026-03-01T10:00:00Z",
+        "valueQuantity": {
+          "value": 92,
+          "unit": "mmHg"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+
+    {
+      "resource": {
+        "resourceType": "MedicationStatement",
+        "id": "med-001",
+        "subject": {
+          "reference": "Patient/patient-001"
+        },
+        "status": "active",
+        "medicationCodeableConcept": {
+          "text": "Drug X 50mg"
+        },
+        "effectivePeriod": {
+          "start": "2026-03-01"
+        }
+      },
+      "request": {
+        "method": "POST",
+        "url": "MedicationStatement"
+      }
+    }
+
+  ]
+}
