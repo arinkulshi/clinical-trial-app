@@ -14,7 +14,8 @@ router = APIRouter(prefix="/api/datasets", tags=["datasets"])
 log = logging.getLogger(__name__)
 
 
-@router.get("/", response_model=DatasetListResponse)
+@router.get("", response_model=DatasetListResponse)
+@router.get("/", response_model=DatasetListResponse, include_in_schema=False)
 async def list_datasets(db: AsyncSession = Depends(get_db)):
     """List all datasets with status."""
     result = await db.execute(

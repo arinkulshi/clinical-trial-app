@@ -33,6 +33,10 @@ gcloud run deploy "${SERVICE_NAME}" \
   --set-env-vars "CT_FHIR_SERVER_URL=${FHIR_SERVER_URL}" \
   --set-env-vars "CT_GCS_BUCKET=ai-poc-project-483817-clinical-uploads" \
   --set-env-vars 'CT_CORS_ORIGINS=["*"]' \
+  --set-env-vars "CT_LLM_PROVIDER=gemini" \
+  --set-env-vars "CT_GEMINI_MODEL=gemini-2.5-flash-lite" \
+  --set-env-vars "CT_ASSISTANT_DEMO_MODE=false" \
+  --set-secrets "CT_GEMINI_API_KEY=gemini-api-key:latest" \
   --allow-unauthenticated
 
 echo "==> Fetching service URL..."

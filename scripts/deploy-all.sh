@@ -70,7 +70,11 @@ gcloud run deploy clinical-trial-backend \
   --max-instances 2 \
   --set-env-vars "CT_FHIR_SERVER_URL=${FHIR_URL}/fhir" \
   --set-env-vars "CT_GCS_BUCKET=ai-poc-project-483817-clinical-uploads" \
-  --set-env-vars "CT_CORS_ORIGINS=*" \
+  --set-env-vars 'CT_CORS_ORIGINS=["*"]' \
+  --set-env-vars "CT_LLM_PROVIDER=gemini" \
+  --set-env-vars "CT_GEMINI_MODEL=gemini-2.5-flash-lite" \
+  --set-env-vars "CT_ASSISTANT_DEMO_MODE=false" \
+  --set-secrets "CT_GEMINI_API_KEY=gemini-api-key:latest" \
   --allow-unauthenticated
 
 BACKEND_URL=$(gcloud run services describe clinical-trial-backend --region "${REGION}" --format 'value(status.url)')

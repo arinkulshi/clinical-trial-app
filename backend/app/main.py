@@ -9,7 +9,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from .config import get_settings
 from .middleware.error_handler import ErrorHandlerMiddleware
 from .models.database import close_db, init_db
-from .routers import datasets, fhir_proxy, upload
+from .routers import assistant, datasets, fhir_proxy, upload
 
 logging.basicConfig(
     level=logging.INFO,
@@ -52,6 +52,7 @@ app.add_middleware(
 app.include_router(fhir_proxy.router)
 app.include_router(upload.router)
 app.include_router(datasets.router)
+app.include_router(assistant.router)
 
 
 @app.get("/health")
