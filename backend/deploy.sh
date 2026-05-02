@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # =============================================================================
-# Deploy FastAPI backend to GCP Cloud Run
-# Run from the backend/ directory.
+# Deploy FastAPI backend to GCP Cloud Run.
+# Can be run from any directory.
 # =============================================================================
 set -euo pipefail
 
@@ -10,12 +10,14 @@ REGION="us-west1"
 REPO="clinical-trial-repo"
 IMAGE="us-west1-docker.pkg.dev/${PROJECT_ID}/${REPO}/backend:latest"
 SERVICE_NAME="clinical-trial-backend"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"
 
 # FHIR server URL — set by the master deploy script or manually
 FHIR_SERVER_URL="${FHIR_SERVER_URL:-}"
 
 echo "==> Building backend Docker image..."
-docker build -t "${IMAGE}" .
+docker build -t "${IMAGE}" -f "${PROJECT_ROOT}/backend/Dockerfile" "${PROJECT_ROOT}"
 
 echo "==> Pushing to Artifact Registry..."
 docker push "${IMAGE}"

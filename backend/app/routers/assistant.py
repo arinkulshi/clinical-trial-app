@@ -457,6 +457,40 @@ TOOL_REGISTRY = {
 }
 
 
+def _unsupported_response(question: str) -> tuple[str, dict[str, Any] | None]:
+    q = question.lower()
+    study_terms = (
+        "study",
+        "trial",
+        "patient",
+        "patients",
+        "arm",
+        "pembro",
+        "chemo",
+        "adverse",
+        "ae",
+        "safety",
+        "alt",
+        "anc",
+        "neutropenia",
+        "lab",
+        "vital",
+        "fhir",
+    )
+    if any(term in q for term in study_terms):
+        return (
+            "I cannot answer that from the selected study data with the tools I have right now. "
+            "I can help with safety summaries, Grade 3+ adverse events by arm, common adverse events, "
+            "ALT >3x ULN, low ANC/neutropenia, and immune-related adverse event examples.",
+            None,
+        )
+    return (
+        "I cannot answer that. This assistant is scoped to the selected clinical trial data, "
+        "so I can help with study safety, adverse events, labs, and patient-level FHIR questions.",
+        None,
+    )
+
+
 def _heuristic_plan(question: str) -> list[ToolCall]:
     q = question.lower()
     if "alt" in q or "hepatotoxic" in q or "liver" in q:
@@ -473,14 +507,15 @@ def _heuristic_plan(question: str) -> list[ToolCall]:
                 description="Compare low ANC/neutropenia signals by treatment arm.",
             )
         ]
-    if "top" in q or "most common" in q or "common" in q:
+    ae_terms = ("adverse", " ae", "aes", "event", "events")
+    if ("top" in q or "most common" in q or "common" in q) and any(term in q for term in ae_terms):
         return [
             ToolCall(
                 tool="top_adverse_events_by_arm",
                 description="Rank the most common adverse events by treatment arm.",
             )
         ]
-    if "immune" in q or "irae" in q or "patient with" in q:
+    if "immune" in q or "irae" in q:
         return [
             ToolCall(
                 tool="find_patient_with_irAE",
@@ -494,12 +529,24 @@ def _heuristic_plan(question: str) -> list[ToolCall]:
                 description="Summarize key safety differences between PEMBRO and CHEMO.",
             )
         ]
-    return [
-        ToolCall(
-            tool="compare_grade3_ae_by_arm",
-            description="Compare Grade 3 or higher adverse event rates by treatment arm.",
-        )
-    ]
+    if (
+        ("grade 3" in q or "grade3" in q or "3+" in q or "severe" in q)
+        and any(term in q for term in ae_terms)
+    ):
+        return [
+            ToolCall(
+                tool="compare_grade3_ae_by_arm",
+                description="Compare Grade 3 or higher adverse event rates by treatment arm.",
+            )
+        ]
+    if ("how many" in q or "count" in q or "enrolled" in q) and "patient" in q:
+        return [
+            ToolCall(
+                tool="get_study_patients",
+                description="Count selected study patients by treatment arm.",
+            )
+        ]
+    return []
 
 
 def _extract_json(text: str) -> dict[str, Any] | None:
@@ -560,6 +607,7 @@ Question: {req.question}
 
 JSON shape:
 {{"queries": [{{"tool": "tool_name", "description": "...", "args": {{"study_id": "CURRENT_STUDY"}}}}], "display_hint": "text|table|chart"}}
+Use an empty queries array when the question cannot be answered with the approved tools or is not about the selected clinical trial data.
 """
     text = await _gemini_generate(prompt)
     if text:
@@ -603,6 +651,9 @@ def _chart_display(title: str, rows: list[dict[str, Any]], value_key: str) -> di
 
 
 def _deterministic_answer(question: str, results: list[dict[str, Any]]) -> tuple[str, dict[str, Any] | None]:
+    if not results:
+        return _unsupported_response(question)
+
     result = results[0] if results else {}
     metric = result.get("metric")
 
@@ -696,6 +747,18 @@ def _deterministic_answer(question: str, results: list[dict[str, Any]]) -> tuple
             ],
         )
 
+    if metric == "study_patients":
+        rows = result.get("arms", [])
+        total = result.get("total", 0)
+        answer = "Selected study patient count: " + "; ".join(
+            f"{row['arm']}: {row['patients']}" for row in rows
+        ) + f"; total: {total}."
+        return answer, _table_display(
+            "Patients by arm",
+            ["Arm", "Patients"],
+            [[row["arm"], row["patients"]] for row in rows],
+        )
+
     return "I found data for the selected study, but I could not format a specific clinical summary for that question yet.", None
 
 
@@ -733,7 +796,7 @@ async def chat(req: AssistantChatRequest):
     for call in calls:
         call.args = {"study_id": req.study_id}
 
-    results = await _run_tools(req.study_id, calls)
+    results = await _run_tools(req.study_id, calls) if calls else []
     answer, display, answer_mode = await _llm_answer(req, calls, results, planning_mode)
 
     sources = sorted(
@@ -750,4 +813,3 @@ async def chat(req: AssistantChatRequest):
         sources=sources,
         mode=answer_mode,
     )
-

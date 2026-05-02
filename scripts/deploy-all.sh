@@ -55,7 +55,7 @@ echo
 echo "=== STEP 2/4: Deploying FastAPI Backend ==="
 BACKEND_IMAGE="${REGISTRY}/backend:latest"
 
-docker build -t "${BACKEND_IMAGE}" ./backend/
+docker build -t "${BACKEND_IMAGE}" -f ./backend/Dockerfile .
 
 docker push "${BACKEND_IMAGE}"
 
