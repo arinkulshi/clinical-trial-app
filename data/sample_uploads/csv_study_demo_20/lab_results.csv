@@ -1,0 +1,481 @@
+SUBJID,LBTESTCD,LBTEST,LBORRES,LBORRESU,LBSTNRLO,LBSTNRHI,LBDTC,VISITNUM,LBBLFL,LBLOINC
+SUBJ-001,ALT,Alanine aminotransferase,21.0,U/L,7.0,56.0,2024-02-03,1,Y,1988-10-01
+SUBJ-001,AST,Aspartate aminotransferase,18.6,U/L,10.0,40.0,2024-02-03,1,Y,1920-8-5
+SUBJ-001,WBC,White blood cell count,6.0,10^3/uL,4.0,11.0,2024-02-03,1,Y,6690-2
+SUBJ-001,ANC,Absolute neutrophil count,3.2,10^3/uL,1.5,7.5,2024-02-03,1,Y,751-8
+SUBJ-001,HGB,Hemoglobin,13.6,g/dL,12.0,17.5,2024-02-03,1,Y,718-7
+SUBJ-001,PLT,Platelet count,235.7,10^3/uL,150.0,450.0,2024-02-03,1,Y,777-3
+SUBJ-001,TSH,Thyroid stimulating hormone,1.4,uIU/mL,0.4,4.0,2024-02-03,1,Y,3016-3
+SUBJ-001,BILI,Bilirubin total,0.4,mg/dL,0.1,1.2,2024-02-03,1,Y,1975-2
+SUBJ-001,ALT,Alanine aminotransferase,28.0,U/L,7.0,56.0,2024-02-24,2,,1988-10-01
+SUBJ-001,AST,Aspartate aminotransferase,22.9,U/L,10.0,40.0,2024-02-24,2,,1920-8-5
+SUBJ-001,WBC,White blood cell count,7.0,10^3/uL,4.0,11.0,2024-02-24,2,,6690-2
+SUBJ-001,ANC,Absolute neutrophil count,4.1,10^3/uL,1.5,7.5,2024-02-24,2,,751-8
+SUBJ-001,HGB,Hemoglobin,14.4,g/dL,12.0,17.5,2024-02-24,2,,718-7
+SUBJ-001,PLT,Platelet count,278.6,10^3/uL,150.0,450.0,2024-02-24,2,,777-3
+SUBJ-001,TSH,Thyroid stimulating hormone,1.9,uIU/mL,0.4,4.0,2024-02-24,2,,3016-3
+SUBJ-001,BILI,Bilirubin total,0.6,mg/dL,0.1,1.2,2024-02-24,2,,1975-2
+SUBJ-001,ALT,Alanine aminotransferase,35.0,U/L,7.0,56.0,2024-03-16,3,,1988-10-01
+SUBJ-001,AST,Aspartate aminotransferase,27.1,U/L,10.0,40.0,2024-03-16,3,,1920-8-5
+SUBJ-001,WBC,White blood cell count,8.0,10^3/uL,4.0,11.0,2024-03-16,3,,6690-2
+SUBJ-001,ANC,Absolute neutrophil count,4.9,10^3/uL,1.5,7.5,2024-03-16,3,,751-8
+SUBJ-001,HGB,Hemoglobin,15.1,g/dL,12.0,17.5,2024-03-16,3,,718-7
+SUBJ-001,PLT,Platelet count,321.4,10^3/uL,150.0,450.0,2024-03-16,3,,777-3
+SUBJ-001,TSH,Thyroid stimulating hormone,2.5,uIU/mL,0.4,4.0,2024-03-16,3,,3016-3
+SUBJ-001,BILI,Bilirubin total,0.7,mg/dL,0.1,1.2,2024-03-16,3,,1975-2
+SUBJ-002,ALT,Alanine aminotransferase,28.0,U/L,7.0,56.0,2024-02-06,1,Y,1988-10-01
+SUBJ-002,AST,Aspartate aminotransferase,22.9,U/L,10.0,40.0,2024-02-06,1,Y,1920-8-5
+SUBJ-002,WBC,White blood cell count,7.0,10^3/uL,4.0,11.0,2024-02-06,1,Y,6690-2
+SUBJ-002,ANC,Absolute neutrophil count,4.1,10^3/uL,1.5,7.5,2024-02-06,1,Y,751-8
+SUBJ-002,HGB,Hemoglobin,14.4,g/dL,12.0,17.5,2024-02-06,1,Y,718-7
+SUBJ-002,PLT,Platelet count,278.6,10^3/uL,150.0,450.0,2024-02-06,1,Y,777-3
+SUBJ-002,TSH,Thyroid stimulating hormone,1.9,uIU/mL,0.4,4.0,2024-02-06,1,Y,3016-3
+SUBJ-002,BILI,Bilirubin total,0.6,mg/dL,0.1,1.2,2024-02-06,1,Y,1975-2
+SUBJ-002,ALT,Alanine aminotransferase,35.0,U/L,7.0,56.0,2024-02-27,2,,1988-10-01
+SUBJ-002,AST,Aspartate aminotransferase,27.1,U/L,10.0,40.0,2024-02-27,2,,1920-8-5
+SUBJ-002,WBC,White blood cell count,8.0,10^3/uL,4.0,11.0,2024-02-27,2,,6690-2
+SUBJ-002,ANC,Absolute neutrophil count,4.9,10^3/uL,1.5,7.5,2024-02-27,2,,751-8
+SUBJ-002,HGB,Hemoglobin,15.1,g/dL,12.0,17.5,2024-02-27,2,,718-7
+SUBJ-002,PLT,Platelet count,321.4,10^3/uL,150.0,450.0,2024-02-27,2,,777-3
+SUBJ-002,TSH,Thyroid stimulating hormone,2.5,uIU/mL,0.4,4.0,2024-02-27,2,,3016-3
+SUBJ-002,BILI,Bilirubin total,0.7,mg/dL,0.1,1.2,2024-02-27,2,,1975-2
+SUBJ-002,ALT,Alanine aminotransferase,42.0,U/L,7.0,56.0,2024-03-19,3,,1988-10-01
+SUBJ-002,AST,Aspartate aminotransferase,31.4,U/L,10.0,40.0,2024-03-19,3,,1920-8-5
+SUBJ-002,WBC,White blood cell count,9.0,10^3/uL,4.0,11.0,2024-03-19,3,,6690-2
+SUBJ-002,ANC,Absolute neutrophil count,5.8,10^3/uL,1.5,7.5,2024-03-19,3,,751-8
+SUBJ-002,HGB,Hemoglobin,15.9,g/dL,12.0,17.5,2024-03-19,3,,718-7
+SUBJ-002,PLT,Platelet count,364.3,10^3/uL,150.0,450.0,2024-03-19,3,,777-3
+SUBJ-002,TSH,Thyroid stimulating hormone,3.0,uIU/mL,0.4,4.0,2024-03-19,3,,3016-3
+SUBJ-002,BILI,Bilirubin total,0.9,mg/dL,0.1,1.2,2024-03-19,3,,1975-2
+SUBJ-003,ALT,Alanine aminotransferase,35.0,U/L,7.0,56.0,2024-02-09,1,Y,1988-10-01
+SUBJ-003,AST,Aspartate aminotransferase,27.1,U/L,10.0,40.0,2024-02-09,1,Y,1920-8-5
+SUBJ-003,WBC,White blood cell count,8.0,10^3/uL,4.0,11.0,2024-02-09,1,Y,6690-2
+SUBJ-003,ANC,Absolute neutrophil count,4.9,10^3/uL,1.5,7.5,2024-02-09,1,Y,751-8
+SUBJ-003,HGB,Hemoglobin,15.1,g/dL,12.0,17.5,2024-02-09,1,Y,718-7
+SUBJ-003,PLT,Platelet count,321.4,10^3/uL,150.0,450.0,2024-02-09,1,Y,777-3
+SUBJ-003,TSH,Thyroid stimulating hormone,2.5,uIU/mL,0.4,4.0,2024-02-09,1,Y,3016-3
+SUBJ-003,BILI,Bilirubin total,0.7,mg/dL,0.1,1.2,2024-02-09,1,Y,1975-2
+SUBJ-003,ALT,Alanine aminotransferase,42.0,U/L,7.0,56.0,2024-03-01,2,,1988-10-01
+SUBJ-003,AST,Aspartate aminotransferase,31.4,U/L,10.0,40.0,2024-03-01,2,,1920-8-5
+SUBJ-003,WBC,White blood cell count,9.0,10^3/uL,4.0,11.0,2024-03-01,2,,6690-2
+SUBJ-003,ANC,Absolute neutrophil count,5.8,10^3/uL,1.5,7.5,2024-03-01,2,,751-8
+SUBJ-003,HGB,Hemoglobin,15.9,g/dL,12.0,17.5,2024-03-01,2,,718-7
+SUBJ-003,PLT,Platelet count,364.3,10^3/uL,150.0,450.0,2024-03-01,2,,777-3
+SUBJ-003,TSH,Thyroid stimulating hormone,3.0,uIU/mL,0.4,4.0,2024-03-01,2,,3016-3
+SUBJ-003,BILI,Bilirubin total,0.9,mg/dL,0.1,1.2,2024-03-01,2,,1975-2
+SUBJ-003,ALT,Alanine aminotransferase,49.0,U/L,7.0,56.0,2024-03-22,3,,1988-10-01
+SUBJ-003,AST,Aspartate aminotransferase,35.7,U/L,10.0,40.0,2024-03-22,3,,1920-8-5
+SUBJ-003,WBC,White blood cell count,10.0,10^3/uL,4.0,11.0,2024-03-22,3,,6690-2
+SUBJ-003,ANC,Absolute neutrophil count,6.6,10^3/uL,1.5,7.5,2024-03-22,3,,751-8
+SUBJ-003,HGB,Hemoglobin,16.7,g/dL,12.0,17.5,2024-03-22,3,,718-7
+SUBJ-003,PLT,Platelet count,407.1,10^3/uL,150.0,450.0,2024-03-22,3,,777-3
+SUBJ-003,TSH,Thyroid stimulating hormone,3.5,uIU/mL,0.4,4.0,2024-03-22,3,,3016-3
+SUBJ-003,BILI,Bilirubin total,1.0,mg/dL,0.1,1.2,2024-03-22,3,,1975-2
+SUBJ-004,ALT,Alanine aminotransferase,42.0,U/L,7.0,56.0,2024-02-12,1,Y,1988-10-01
+SUBJ-004,AST,Aspartate aminotransferase,31.4,U/L,10.0,40.0,2024-02-12,1,Y,1920-8-5
+SUBJ-004,WBC,White blood cell count,9.0,10^3/uL,4.0,11.0,2024-02-12,1,Y,6690-2
+SUBJ-004,ANC,Absolute neutrophil count,5.8,10^3/uL,1.5,7.5,2024-02-12,1,Y,751-8
+SUBJ-004,HGB,Hemoglobin,15.9,g/dL,12.0,17.5,2024-02-12,1,Y,718-7
+SUBJ-004,PLT,Platelet count,364.3,10^3/uL,150.0,450.0,2024-02-12,1,Y,777-3
+SUBJ-004,TSH,Thyroid stimulating hormone,3.0,uIU/mL,0.4,4.0,2024-02-12,1,Y,3016-3
+SUBJ-004,BILI,Bilirubin total,0.9,mg/dL,0.1,1.2,2024-02-12,1,Y,1975-2
+SUBJ-004,ALT,Alanine aminotransferase,49.0,U/L,7.0,56.0,2024-03-04,2,,1988-10-01
+SUBJ-004,AST,Aspartate aminotransferase,35.7,U/L,10.0,40.0,2024-03-04,2,,1920-8-5
+SUBJ-004,WBC,White blood cell count,10.0,10^3/uL,4.0,11.0,2024-03-04,2,,6690-2
+SUBJ-004,ANC,Absolute neutrophil count,6.6,10^3/uL,1.5,7.5,2024-03-04,2,,751-8
+SUBJ-004,HGB,Hemoglobin,16.7,g/dL,12.0,17.5,2024-03-04,2,,718-7
+SUBJ-004,PLT,Platelet count,407.1,10^3/uL,150.0,450.0,2024-03-04,2,,777-3
+SUBJ-004,TSH,Thyroid stimulating hormone,3.5,uIU/mL,0.4,4.0,2024-03-04,2,,3016-3
+SUBJ-004,BILI,Bilirubin total,1.0,mg/dL,0.1,1.2,2024-03-04,2,,1975-2
+SUBJ-004,ALT,Alanine aminotransferase,7.0,U/L,7.0,56.0,2024-03-25,3,,1988-10-01
+SUBJ-004,AST,Aspartate aminotransferase,10.0,U/L,10.0,40.0,2024-03-25,3,,1920-8-5
+SUBJ-004,WBC,White blood cell count,4.0,10^3/uL,4.0,11.0,2024-03-25,3,,6690-2
+SUBJ-004,ANC,Absolute neutrophil count,1.5,10^3/uL,1.5,7.5,2024-03-25,3,,751-8
+SUBJ-004,HGB,Hemoglobin,12.0,g/dL,12.0,17.5,2024-03-25,3,,718-7
+SUBJ-004,PLT,Platelet count,150.0,10^3/uL,150.0,450.0,2024-03-25,3,,777-3
+SUBJ-004,TSH,Thyroid stimulating hormone,0.4,uIU/mL,0.4,4.0,2024-03-25,3,,3016-3
+SUBJ-004,BILI,Bilirubin total,0.1,mg/dL,0.1,1.2,2024-03-25,3,,1975-2
+SUBJ-005,ALT,Alanine aminotransferase,49.0,U/L,7.0,56.0,2024-02-15,1,Y,1988-10-01
+SUBJ-005,AST,Aspartate aminotransferase,35.7,U/L,10.0,40.0,2024-02-15,1,Y,1920-8-5
+SUBJ-005,WBC,White blood cell count,10.0,10^3/uL,4.0,11.0,2024-02-15,1,Y,6690-2
+SUBJ-005,ANC,Absolute neutrophil count,6.6,10^3/uL,1.5,7.5,2024-02-15,1,Y,751-8
+SUBJ-005,HGB,Hemoglobin,16.7,g/dL,12.0,17.5,2024-02-15,1,Y,718-7
+SUBJ-005,PLT,Platelet count,407.1,10^3/uL,150.0,450.0,2024-02-15,1,Y,777-3
+SUBJ-005,TSH,Thyroid stimulating hormone,3.5,uIU/mL,0.4,4.0,2024-02-15,1,Y,3016-3
+SUBJ-005,BILI,Bilirubin total,1.0,mg/dL,0.1,1.2,2024-02-15,1,Y,1975-2
+SUBJ-005,ALT,Alanine aminotransferase,7.0,U/L,7.0,56.0,2024-03-07,2,,1988-10-01
+SUBJ-005,AST,Aspartate aminotransferase,10.0,U/L,10.0,40.0,2024-03-07,2,,1920-8-5
+SUBJ-005,WBC,White blood cell count,4.0,10^3/uL,4.0,11.0,2024-03-07,2,,6690-2
+SUBJ-005,ANC,Absolute neutrophil count,1.5,10^3/uL,1.5,7.5,2024-03-07,2,,751-8
+SUBJ-005,HGB,Hemoglobin,12.0,g/dL,12.0,17.5,2024-03-07,2,,718-7
+SUBJ-005,PLT,Platelet count,150.0,10^3/uL,150.0,450.0,2024-03-07,2,,777-3
+SUBJ-005,TSH,Thyroid stimulating hormone,0.4,uIU/mL,0.4,4.0,2024-03-07,2,,3016-3
+SUBJ-005,BILI,Bilirubin total,0.1,mg/dL,0.1,1.2,2024-03-07,2,,1975-2
+SUBJ-005,ALT,Alanine aminotransferase,140.0,U/L,7.0,56.0,2024-03-28,3,,1988-10-01
+SUBJ-005,AST,Aspartate aminotransferase,100.0,U/L,10.0,40.0,2024-03-28,3,,1920-8-5
+SUBJ-005,WBC,White blood cell count,5.0,10^3/uL,4.0,11.0,2024-03-28,3,,6690-2
+SUBJ-005,ANC,Absolute neutrophil count,2.4,10^3/uL,1.5,7.5,2024-03-28,3,,751-8
+SUBJ-005,HGB,Hemoglobin,12.8,g/dL,12.0,17.5,2024-03-28,3,,718-7
+SUBJ-005,PLT,Platelet count,192.9,10^3/uL,150.0,450.0,2024-03-28,3,,777-3
+SUBJ-005,TSH,Thyroid stimulating hormone,0.9,uIU/mL,0.4,4.0,2024-03-28,3,,3016-3
+SUBJ-005,BILI,Bilirubin total,0.3,mg/dL,0.1,1.2,2024-03-28,3,,1975-2
+SUBJ-006,ALT,Alanine aminotransferase,7.0,U/L,7.0,56.0,2024-02-18,1,Y,1988-10-01
+SUBJ-006,AST,Aspartate aminotransferase,10.0,U/L,10.0,40.0,2024-02-18,1,Y,1920-8-5
+SUBJ-006,WBC,White blood cell count,4.0,10^3/uL,4.0,11.0,2024-02-18,1,Y,6690-2
+SUBJ-006,ANC,Absolute neutrophil count,1.5,10^3/uL,1.5,7.5,2024-02-18,1,Y,751-8
+SUBJ-006,HGB,Hemoglobin,12.0,g/dL,12.0,17.5,2024-02-18,1,Y,718-7
+SUBJ-006,PLT,Platelet count,150.0,10^3/uL,150.0,450.0,2024-02-18,1,Y,777-3
+SUBJ-006,TSH,Thyroid stimulating hormone,0.4,uIU/mL,0.4,4.0,2024-02-18,1,Y,3016-3
+SUBJ-006,BILI,Bilirubin total,0.1,mg/dL,0.1,1.2,2024-02-18,1,Y,1975-2
+SUBJ-006,ALT,Alanine aminotransferase,14.0,U/L,7.0,56.0,2024-03-10,2,,1988-10-01
+SUBJ-006,AST,Aspartate aminotransferase,14.3,U/L,10.0,40.0,2024-03-10,2,,1920-8-5
+SUBJ-006,WBC,White blood cell count,5.0,10^3/uL,4.0,11.0,2024-03-10,2,,6690-2
+SUBJ-006,ANC,Absolute neutrophil count,2.4,10^3/uL,1.5,7.5,2024-03-10,2,,751-8
+SUBJ-006,HGB,Hemoglobin,12.8,g/dL,12.0,17.5,2024-03-10,2,,718-7
+SUBJ-006,PLT,Platelet count,192.9,10^3/uL,150.0,450.0,2024-03-10,2,,777-3
+SUBJ-006,TSH,Thyroid stimulating hormone,0.9,uIU/mL,0.4,4.0,2024-03-10,2,,3016-3
+SUBJ-006,BILI,Bilirubin total,0.3,mg/dL,0.1,1.2,2024-03-10,2,,1975-2
+SUBJ-006,ALT,Alanine aminotransferase,21.0,U/L,7.0,56.0,2024-03-31,3,,1988-10-01
+SUBJ-006,AST,Aspartate aminotransferase,18.6,U/L,10.0,40.0,2024-03-31,3,,1920-8-5
+SUBJ-006,WBC,White blood cell count,6.0,10^3/uL,4.0,11.0,2024-03-31,3,,6690-2
+SUBJ-006,ANC,Absolute neutrophil count,3.2,10^3/uL,1.5,7.5,2024-03-31,3,,751-8
+SUBJ-006,HGB,Hemoglobin,13.6,g/dL,12.0,17.5,2024-03-31,3,,718-7
+SUBJ-006,PLT,Platelet count,235.7,10^3/uL,150.0,450.0,2024-03-31,3,,777-3
+SUBJ-006,TSH,Thyroid stimulating hormone,1.4,uIU/mL,0.4,4.0,2024-03-31,3,,3016-3
+SUBJ-006,BILI,Bilirubin total,0.4,mg/dL,0.1,1.2,2024-03-31,3,,1975-2
+SUBJ-007,ALT,Alanine aminotransferase,14.0,U/L,7.0,56.0,2024-02-21,1,Y,1988-10-01
+SUBJ-007,AST,Aspartate aminotransferase,14.3,U/L,10.0,40.0,2024-02-21,1,Y,1920-8-5
+SUBJ-007,WBC,White blood cell count,5.0,10^3/uL,4.0,11.0,2024-02-21,1,Y,6690-2
+SUBJ-007,ANC,Absolute neutrophil count,2.4,10^3/uL,1.5,7.5,2024-02-21,1,Y,751-8
+SUBJ-007,HGB,Hemoglobin,12.8,g/dL,12.0,17.5,2024-02-21,1,Y,718-7
+SUBJ-007,PLT,Platelet count,192.9,10^3/uL,150.0,450.0,2024-02-21,1,Y,777-3
+SUBJ-007,TSH,Thyroid stimulating hormone,0.9,uIU/mL,0.4,4.0,2024-02-21,1,Y,3016-3
+SUBJ-007,BILI,Bilirubin total,0.3,mg/dL,0.1,1.2,2024-02-21,1,Y,1975-2
+SUBJ-007,ALT,Alanine aminotransferase,21.0,U/L,7.0,56.0,2024-03-13,2,,1988-10-01
+SUBJ-007,AST,Aspartate aminotransferase,18.6,U/L,10.0,40.0,2024-03-13,2,,1920-8-5
+SUBJ-007,WBC,White blood cell count,6.0,10^3/uL,4.0,11.0,2024-03-13,2,,6690-2
+SUBJ-007,ANC,Absolute neutrophil count,3.2,10^3/uL,1.5,7.5,2024-03-13,2,,751-8
+SUBJ-007,HGB,Hemoglobin,13.6,g/dL,12.0,17.5,2024-03-13,2,,718-7
+SUBJ-007,PLT,Platelet count,235.7,10^3/uL,150.0,450.0,2024-03-13,2,,777-3
+SUBJ-007,TSH,Thyroid stimulating hormone,1.4,uIU/mL,0.4,4.0,2024-03-13,2,,3016-3
+SUBJ-007,BILI,Bilirubin total,0.4,mg/dL,0.1,1.2,2024-03-13,2,,1975-2
+SUBJ-007,ALT,Alanine aminotransferase,28.0,U/L,7.0,56.0,2024-04-03,3,,1988-10-01
+SUBJ-007,AST,Aspartate aminotransferase,22.9,U/L,10.0,40.0,2024-04-03,3,,1920-8-5
+SUBJ-007,WBC,White blood cell count,7.0,10^3/uL,4.0,11.0,2024-04-03,3,,6690-2
+SUBJ-007,ANC,Absolute neutrophil count,4.1,10^3/uL,1.5,7.5,2024-04-03,3,,751-8
+SUBJ-007,HGB,Hemoglobin,14.4,g/dL,12.0,17.5,2024-04-03,3,,718-7
+SUBJ-007,PLT,Platelet count,278.6,10^3/uL,150.0,450.0,2024-04-03,3,,777-3
+SUBJ-007,TSH,Thyroid stimulating hormone,1.9,uIU/mL,0.4,4.0,2024-04-03,3,,3016-3
+SUBJ-007,BILI,Bilirubin total,0.6,mg/dL,0.1,1.2,2024-04-03,3,,1975-2
+SUBJ-008,ALT,Alanine aminotransferase,21.0,U/L,7.0,56.0,2024-02-24,1,Y,1988-10-01
+SUBJ-008,AST,Aspartate aminotransferase,18.6,U/L,10.0,40.0,2024-02-24,1,Y,1920-8-5
+SUBJ-008,WBC,White blood cell count,6.0,10^3/uL,4.0,11.0,2024-02-24,1,Y,6690-2
+SUBJ-008,ANC,Absolute neutrophil count,3.2,10^3/uL,1.5,7.5,2024-02-24,1,Y,751-8
+SUBJ-008,HGB,Hemoglobin,13.6,g/dL,12.0,17.5,2024-02-24,1,Y,718-7
+SUBJ-008,PLT,Platelet count,235.7,10^3/uL,150.0,450.0,2024-02-24,1,Y,777-3
+SUBJ-008,TSH,Thyroid stimulating hormone,1.4,uIU/mL,0.4,4.0,2024-02-24,1,Y,3016-3
+SUBJ-008,BILI,Bilirubin total,0.4,mg/dL,0.1,1.2,2024-02-24,1,Y,1975-2
+SUBJ-008,ALT,Alanine aminotransferase,28.0,U/L,7.0,56.0,2024-03-16,2,,1988-10-01
+SUBJ-008,AST,Aspartate aminotransferase,22.9,U/L,10.0,40.0,2024-03-16,2,,1920-8-5
+SUBJ-008,WBC,White blood cell count,7.0,10^3/uL,4.0,11.0,2024-03-16,2,,6690-2
+SUBJ-008,ANC,Absolute neutrophil count,4.1,10^3/uL,1.5,7.5,2024-03-16,2,,751-8
+SUBJ-008,HGB,Hemoglobin,14.4,g/dL,12.0,17.5,2024-03-16,2,,718-7
+SUBJ-008,PLT,Platelet count,278.6,10^3/uL,150.0,450.0,2024-03-16,2,,777-3
+SUBJ-008,TSH,Thyroid stimulating hormone,1.9,uIU/mL,0.4,4.0,2024-03-16,2,,3016-3
+SUBJ-008,BILI,Bilirubin total,0.6,mg/dL,0.1,1.2,2024-03-16,2,,1975-2
+SUBJ-008,ALT,Alanine aminotransferase,35.0,U/L,7.0,56.0,2024-04-06,3,,1988-10-01
+SUBJ-008,AST,Aspartate aminotransferase,27.1,U/L,10.0,40.0,2024-04-06,3,,1920-8-5
+SUBJ-008,WBC,White blood cell count,8.0,10^3/uL,4.0,11.0,2024-04-06,3,,6690-2
+SUBJ-008,ANC,Absolute neutrophil count,4.9,10^3/uL,1.5,7.5,2024-04-06,3,,751-8
+SUBJ-008,HGB,Hemoglobin,15.1,g/dL,12.0,17.5,2024-04-06,3,,718-7
+SUBJ-008,PLT,Platelet count,321.4,10^3/uL,150.0,450.0,2024-04-06,3,,777-3
+SUBJ-008,TSH,Thyroid stimulating hormone,2.5,uIU/mL,0.4,4.0,2024-04-06,3,,3016-3
+SUBJ-008,BILI,Bilirubin total,0.7,mg/dL,0.1,1.2,2024-04-06,3,,1975-2
+SUBJ-009,ALT,Alanine aminotransferase,28.0,U/L,7.0,56.0,2024-02-27,1,Y,1988-10-01
+SUBJ-009,AST,Aspartate aminotransferase,22.9,U/L,10.0,40.0,2024-02-27,1,Y,1920-8-5
+SUBJ-009,WBC,White blood cell count,7.0,10^3/uL,4.0,11.0,2024-02-27,1,Y,6690-2
+SUBJ-009,ANC,Absolute neutrophil count,4.1,10^3/uL,1.5,7.5,2024-02-27,1,Y,751-8
+SUBJ-009,HGB,Hemoglobin,14.4,g/dL,12.0,17.5,2024-02-27,1,Y,718-7
+SUBJ-009,PLT,Platelet count,278.6,10^3/uL,150.0,450.0,2024-02-27,1,Y,777-3
+SUBJ-009,TSH,Thyroid stimulating hormone,1.9,uIU/mL,0.4,4.0,2024-02-27,1,Y,3016-3
+SUBJ-009,BILI,Bilirubin total,0.6,mg/dL,0.1,1.2,2024-02-27,1,Y,1975-2
+SUBJ-009,ALT,Alanine aminotransferase,35.0,U/L,7.0,56.0,2024-03-19,2,,1988-10-01
+SUBJ-009,AST,Aspartate aminotransferase,27.1,U/L,10.0,40.0,2024-03-19,2,,1920-8-5
+SUBJ-009,WBC,White blood cell count,8.0,10^3/uL,4.0,11.0,2024-03-19,2,,6690-2
+SUBJ-009,ANC,Absolute neutrophil count,4.9,10^3/uL,1.5,7.5,2024-03-19,2,,751-8
+SUBJ-009,HGB,Hemoglobin,15.1,g/dL,12.0,17.5,2024-03-19,2,,718-7
+SUBJ-009,PLT,Platelet count,321.4,10^3/uL,150.0,450.0,2024-03-19,2,,777-3
+SUBJ-009,TSH,Thyroid stimulating hormone,2.5,uIU/mL,0.4,4.0,2024-03-19,2,,3016-3
+SUBJ-009,BILI,Bilirubin total,0.7,mg/dL,0.1,1.2,2024-03-19,2,,1975-2
+SUBJ-009,ALT,Alanine aminotransferase,42.0,U/L,7.0,56.0,2024-04-09,3,,1988-10-01
+SUBJ-009,AST,Aspartate aminotransferase,31.4,U/L,10.0,40.0,2024-04-09,3,,1920-8-5
+SUBJ-009,WBC,White blood cell count,9.0,10^3/uL,4.0,11.0,2024-04-09,3,,6690-2
+SUBJ-009,ANC,Absolute neutrophil count,5.8,10^3/uL,1.5,7.5,2024-04-09,3,,751-8
+SUBJ-009,HGB,Hemoglobin,15.9,g/dL,12.0,17.5,2024-04-09,3,,718-7
+SUBJ-009,PLT,Platelet count,364.3,10^3/uL,150.0,450.0,2024-04-09,3,,777-3
+SUBJ-009,TSH,Thyroid stimulating hormone,3.0,uIU/mL,0.4,4.0,2024-04-09,3,,3016-3
+SUBJ-009,BILI,Bilirubin total,0.9,mg/dL,0.1,1.2,2024-04-09,3,,1975-2
+SUBJ-010,ALT,Alanine aminotransferase,35.0,U/L,7.0,56.0,2024-03-01,1,Y,1988-10-01
+SUBJ-010,AST,Aspartate aminotransferase,27.1,U/L,10.0,40.0,2024-03-01,1,Y,1920-8-5
+SUBJ-010,WBC,White blood cell count,8.0,10^3/uL,4.0,11.0,2024-03-01,1,Y,6690-2
+SUBJ-010,ANC,Absolute neutrophil count,4.9,10^3/uL,1.5,7.5,2024-03-01,1,Y,751-8
+SUBJ-010,HGB,Hemoglobin,15.1,g/dL,12.0,17.5,2024-03-01,1,Y,718-7
+SUBJ-010,PLT,Platelet count,321.4,10^3/uL,150.0,450.0,2024-03-01,1,Y,777-3
+SUBJ-010,TSH,Thyroid stimulating hormone,2.5,uIU/mL,0.4,4.0,2024-03-01,1,Y,3016-3
+SUBJ-010,BILI,Bilirubin total,0.7,mg/dL,0.1,1.2,2024-03-01,1,Y,1975-2
+SUBJ-010,ALT,Alanine aminotransferase,42.0,U/L,7.0,56.0,2024-03-22,2,,1988-10-01
+SUBJ-010,AST,Aspartate aminotransferase,31.4,U/L,10.0,40.0,2024-03-22,2,,1920-8-5
+SUBJ-010,WBC,White blood cell count,9.0,10^3/uL,4.0,11.0,2024-03-22,2,,6690-2
+SUBJ-010,ANC,Absolute neutrophil count,5.8,10^3/uL,1.5,7.5,2024-03-22,2,,751-8
+SUBJ-010,HGB,Hemoglobin,15.9,g/dL,12.0,17.5,2024-03-22,2,,718-7
+SUBJ-010,PLT,Platelet count,364.3,10^3/uL,150.0,450.0,2024-03-22,2,,777-3
+SUBJ-010,TSH,Thyroid stimulating hormone,3.0,uIU/mL,0.4,4.0,2024-03-22,2,,3016-3
+SUBJ-010,BILI,Bilirubin total,0.9,mg/dL,0.1,1.2,2024-03-22,2,,1975-2
+SUBJ-010,ALT,Alanine aminotransferase,49.0,U/L,7.0,56.0,2024-04-12,3,,1988-10-01
+SUBJ-010,AST,Aspartate aminotransferase,35.7,U/L,10.0,40.0,2024-04-12,3,,1920-8-5
+SUBJ-010,WBC,White blood cell count,10.0,10^3/uL,4.0,11.0,2024-04-12,3,,6690-2
+SUBJ-010,ANC,Absolute neutrophil count,6.6,10^3/uL,1.5,7.5,2024-04-12,3,,751-8
+SUBJ-010,HGB,Hemoglobin,16.7,g/dL,12.0,17.5,2024-04-12,3,,718-7
+SUBJ-010,PLT,Platelet count,407.1,10^3/uL,150.0,450.0,2024-04-12,3,,777-3
+SUBJ-010,TSH,Thyroid stimulating hormone,3.5,uIU/mL,0.4,4.0,2024-04-12,3,,3016-3
+SUBJ-010,BILI,Bilirubin total,1.0,mg/dL,0.1,1.2,2024-04-12,3,,1975-2
+SUBJ-011,ALT,Alanine aminotransferase,42.0,U/L,7.0,56.0,2024-03-04,1,Y,1988-10-01
+SUBJ-011,AST,Aspartate aminotransferase,31.4,U/L,10.0,40.0,2024-03-04,1,Y,1920-8-5
+SUBJ-011,WBC,White blood cell count,9.0,10^3/uL,4.0,11.0,2024-03-04,1,Y,6690-2
+SUBJ-011,ANC,Absolute neutrophil count,5.8,10^3/uL,1.5,7.5,2024-03-04,1,Y,751-8
+SUBJ-011,HGB,Hemoglobin,15.9,g/dL,12.0,17.5,2024-03-04,1,Y,718-7
+SUBJ-011,PLT,Platelet count,364.3,10^3/uL,150.0,450.0,2024-03-04,1,Y,777-3
+SUBJ-011,TSH,Thyroid stimulating hormone,3.0,uIU/mL,0.4,4.0,2024-03-04,1,Y,3016-3
+SUBJ-011,BILI,Bilirubin total,0.9,mg/dL,0.1,1.2,2024-03-04,1,Y,1975-2
+SUBJ-011,ALT,Alanine aminotransferase,49.0,U/L,7.0,56.0,2024-03-25,2,,1988-10-01
+SUBJ-011,AST,Aspartate aminotransferase,35.7,U/L,10.0,40.0,2024-03-25,2,,1920-8-5
+SUBJ-011,WBC,White blood cell count,10.0,10^3/uL,4.0,11.0,2024-03-25,2,,6690-2
+SUBJ-011,ANC,Absolute neutrophil count,6.6,10^3/uL,1.5,7.5,2024-03-25,2,,751-8
+SUBJ-011,HGB,Hemoglobin,16.7,g/dL,12.0,17.5,2024-03-25,2,,718-7
+SUBJ-011,PLT,Platelet count,407.1,10^3/uL,150.0,450.0,2024-03-25,2,,777-3
+SUBJ-011,TSH,Thyroid stimulating hormone,3.5,uIU/mL,0.4,4.0,2024-03-25,2,,3016-3
+SUBJ-011,BILI,Bilirubin total,1.0,mg/dL,0.1,1.2,2024-03-25,2,,1975-2
+SUBJ-011,ALT,Alanine aminotransferase,7.0,U/L,7.0,56.0,2024-04-15,3,,1988-10-01
+SUBJ-011,AST,Aspartate aminotransferase,10.0,U/L,10.0,40.0,2024-04-15,3,,1920-8-5
+SUBJ-011,WBC,White blood cell count,4.0,10^3/uL,4.0,11.0,2024-04-15,3,,6690-2
+SUBJ-011,ANC,Absolute neutrophil count,1.5,10^3/uL,1.5,7.5,2024-04-15,3,,751-8
+SUBJ-011,HGB,Hemoglobin,12.0,g/dL,12.0,17.5,2024-04-15,3,,718-7
+SUBJ-011,PLT,Platelet count,150.0,10^3/uL,150.0,450.0,2024-04-15,3,,777-3
+SUBJ-011,TSH,Thyroid stimulating hormone,0.4,uIU/mL,0.4,4.0,2024-04-15,3,,3016-3
+SUBJ-011,BILI,Bilirubin total,0.1,mg/dL,0.1,1.2,2024-04-15,3,,1975-2
+SUBJ-012,ALT,Alanine aminotransferase,49.0,U/L,7.0,56.0,2024-03-07,1,Y,1988-10-01
+SUBJ-012,AST,Aspartate aminotransferase,35.7,U/L,10.0,40.0,2024-03-07,1,Y,1920-8-5
+SUBJ-012,WBC,White blood cell count,10.0,10^3/uL,4.0,11.0,2024-03-07,1,Y,6690-2
+SUBJ-012,ANC,Absolute neutrophil count,6.6,10^3/uL,1.5,7.5,2024-03-07,1,Y,751-8
+SUBJ-012,HGB,Hemoglobin,16.7,g/dL,12.0,17.5,2024-03-07,1,Y,718-7
+SUBJ-012,PLT,Platelet count,407.1,10^3/uL,150.0,450.0,2024-03-07,1,Y,777-3
+SUBJ-012,TSH,Thyroid stimulating hormone,3.5,uIU/mL,0.4,4.0,2024-03-07,1,Y,3016-3
+SUBJ-012,BILI,Bilirubin total,1.0,mg/dL,0.1,1.2,2024-03-07,1,Y,1975-2
+SUBJ-012,ALT,Alanine aminotransferase,7.0,U/L,7.0,56.0,2024-03-28,2,,1988-10-01
+SUBJ-012,AST,Aspartate aminotransferase,10.0,U/L,10.0,40.0,2024-03-28,2,,1920-8-5
+SUBJ-012,WBC,White blood cell count,4.0,10^3/uL,4.0,11.0,2024-03-28,2,,6690-2
+SUBJ-012,ANC,Absolute neutrophil count,1.5,10^3/uL,1.5,7.5,2024-03-28,2,,751-8
+SUBJ-012,HGB,Hemoglobin,12.0,g/dL,12.0,17.5,2024-03-28,2,,718-7
+SUBJ-012,PLT,Platelet count,150.0,10^3/uL,150.0,450.0,2024-03-28,2,,777-3
+SUBJ-012,TSH,Thyroid stimulating hormone,0.4,uIU/mL,0.4,4.0,2024-03-28,2,,3016-3
+SUBJ-012,BILI,Bilirubin total,0.1,mg/dL,0.1,1.2,2024-03-28,2,,1975-2
+SUBJ-012,ALT,Alanine aminotransferase,14.0,U/L,7.0,56.0,2024-04-18,3,,1988-10-01
+SUBJ-012,AST,Aspartate aminotransferase,14.3,U/L,10.0,40.0,2024-04-18,3,,1920-8-5
+SUBJ-012,WBC,White blood cell count,5.0,10^3/uL,4.0,11.0,2024-04-18,3,,6690-2
+SUBJ-012,ANC,Absolute neutrophil count,2.4,10^3/uL,1.5,7.5,2024-04-18,3,,751-8
+SUBJ-012,HGB,Hemoglobin,12.8,g/dL,12.0,17.5,2024-04-18,3,,718-7
+SUBJ-012,PLT,Platelet count,192.9,10^3/uL,150.0,450.0,2024-04-18,3,,777-3
+SUBJ-012,TSH,Thyroid stimulating hormone,0.9,uIU/mL,0.4,4.0,2024-04-18,3,,3016-3
+SUBJ-012,BILI,Bilirubin total,0.3,mg/dL,0.1,1.2,2024-04-18,3,,1975-2
+SUBJ-013,ALT,Alanine aminotransferase,7.0,U/L,7.0,56.0,2024-03-10,1,Y,1988-10-01
+SUBJ-013,AST,Aspartate aminotransferase,10.0,U/L,10.0,40.0,2024-03-10,1,Y,1920-8-5
+SUBJ-013,WBC,White blood cell count,4.0,10^3/uL,4.0,11.0,2024-03-10,1,Y,6690-2
+SUBJ-013,ANC,Absolute neutrophil count,1.5,10^3/uL,1.5,7.5,2024-03-10,1,Y,751-8
+SUBJ-013,HGB,Hemoglobin,12.0,g/dL,12.0,17.5,2024-03-10,1,Y,718-7
+SUBJ-013,PLT,Platelet count,150.0,10^3/uL,150.0,450.0,2024-03-10,1,Y,777-3
+SUBJ-013,TSH,Thyroid stimulating hormone,0.4,uIU/mL,0.4,4.0,2024-03-10,1,Y,3016-3
+SUBJ-013,BILI,Bilirubin total,0.1,mg/dL,0.1,1.2,2024-03-10,1,Y,1975-2
+SUBJ-013,ALT,Alanine aminotransferase,14.0,U/L,7.0,56.0,2024-03-31,2,,1988-10-01
+SUBJ-013,AST,Aspartate aminotransferase,14.3,U/L,10.0,40.0,2024-03-31,2,,1920-8-5
+SUBJ-013,WBC,White blood cell count,5.0,10^3/uL,4.0,11.0,2024-03-31,2,,6690-2
+SUBJ-013,ANC,Absolute neutrophil count,2.4,10^3/uL,1.5,7.5,2024-03-31,2,,751-8
+SUBJ-013,HGB,Hemoglobin,12.8,g/dL,12.0,17.5,2024-03-31,2,,718-7
+SUBJ-013,PLT,Platelet count,192.9,10^3/uL,150.0,450.0,2024-03-31,2,,777-3
+SUBJ-013,TSH,Thyroid stimulating hormone,0.9,uIU/mL,0.4,4.0,2024-03-31,2,,3016-3
+SUBJ-013,BILI,Bilirubin total,0.3,mg/dL,0.1,1.2,2024-03-31,2,,1975-2
+SUBJ-013,ALT,Alanine aminotransferase,21.0,U/L,7.0,56.0,2024-04-21,3,,1988-10-01
+SUBJ-013,AST,Aspartate aminotransferase,18.6,U/L,10.0,40.0,2024-04-21,3,,1920-8-5
+SUBJ-013,WBC,White blood cell count,6.0,10^3/uL,4.0,11.0,2024-04-21,3,,6690-2
+SUBJ-013,ANC,Absolute neutrophil count,3.2,10^3/uL,1.5,7.5,2024-04-21,3,,751-8
+SUBJ-013,HGB,Hemoglobin,13.6,g/dL,12.0,17.5,2024-04-21,3,,718-7
+SUBJ-013,PLT,Platelet count,235.7,10^3/uL,150.0,450.0,2024-04-21,3,,777-3
+SUBJ-013,TSH,Thyroid stimulating hormone,1.4,uIU/mL,0.4,4.0,2024-04-21,3,,3016-3
+SUBJ-013,BILI,Bilirubin total,0.4,mg/dL,0.1,1.2,2024-04-21,3,,1975-2
+SUBJ-014,ALT,Alanine aminotransferase,14.0,U/L,7.0,56.0,2024-03-13,1,Y,1988-10-01
+SUBJ-014,AST,Aspartate aminotransferase,14.3,U/L,10.0,40.0,2024-03-13,1,Y,1920-8-5
+SUBJ-014,WBC,White blood cell count,5.0,10^3/uL,4.0,11.0,2024-03-13,1,Y,6690-2
+SUBJ-014,ANC,Absolute neutrophil count,2.4,10^3/uL,1.5,7.5,2024-03-13,1,Y,751-8
+SUBJ-014,HGB,Hemoglobin,12.8,g/dL,12.0,17.5,2024-03-13,1,Y,718-7
+SUBJ-014,PLT,Platelet count,192.9,10^3/uL,150.0,450.0,2024-03-13,1,Y,777-3
+SUBJ-014,TSH,Thyroid stimulating hormone,0.9,uIU/mL,0.4,4.0,2024-03-13,1,Y,3016-3
+SUBJ-014,BILI,Bilirubin total,0.3,mg/dL,0.1,1.2,2024-03-13,1,Y,1975-2
+SUBJ-014,ALT,Alanine aminotransferase,21.0,U/L,7.0,56.0,2024-04-03,2,,1988-10-01
+SUBJ-014,AST,Aspartate aminotransferase,18.6,U/L,10.0,40.0,2024-04-03,2,,1920-8-5
+SUBJ-014,WBC,White blood cell count,6.0,10^3/uL,4.0,11.0,2024-04-03,2,,6690-2
+SUBJ-014,ANC,Absolute neutrophil count,3.2,10^3/uL,1.5,7.5,2024-04-03,2,,751-8
+SUBJ-014,HGB,Hemoglobin,13.6,g/dL,12.0,17.5,2024-04-03,2,,718-7
+SUBJ-014,PLT,Platelet count,235.7,10^3/uL,150.0,450.0,2024-04-03,2,,777-3
+SUBJ-014,TSH,Thyroid stimulating hormone,1.4,uIU/mL,0.4,4.0,2024-04-03,2,,3016-3
+SUBJ-014,BILI,Bilirubin total,0.4,mg/dL,0.1,1.2,2024-04-03,2,,1975-2
+SUBJ-014,ALT,Alanine aminotransferase,28.0,U/L,7.0,56.0,2024-04-24,3,,1988-10-01
+SUBJ-014,AST,Aspartate aminotransferase,22.9,U/L,10.0,40.0,2024-04-24,3,,1920-8-5
+SUBJ-014,WBC,White blood cell count,7.0,10^3/uL,4.0,11.0,2024-04-24,3,,6690-2
+SUBJ-014,ANC,Absolute neutrophil count,4.1,10^3/uL,1.5,7.5,2024-04-24,3,,751-8
+SUBJ-014,HGB,Hemoglobin,14.4,g/dL,12.0,17.5,2024-04-24,3,,718-7
+SUBJ-014,PLT,Platelet count,278.6,10^3/uL,150.0,450.0,2024-04-24,3,,777-3
+SUBJ-014,TSH,Thyroid stimulating hormone,1.9,uIU/mL,0.4,4.0,2024-04-24,3,,3016-3
+SUBJ-014,BILI,Bilirubin total,0.6,mg/dL,0.1,1.2,2024-04-24,3,,1975-2
+SUBJ-015,ALT,Alanine aminotransferase,21.0,U/L,7.0,56.0,2024-03-16,1,Y,1988-10-01
+SUBJ-015,AST,Aspartate aminotransferase,18.6,U/L,10.0,40.0,2024-03-16,1,Y,1920-8-5
+SUBJ-015,WBC,White blood cell count,6.0,10^3/uL,4.0,11.0,2024-03-16,1,Y,6690-2
+SUBJ-015,ANC,Absolute neutrophil count,3.2,10^3/uL,1.5,7.5,2024-03-16,1,Y,751-8
+SUBJ-015,HGB,Hemoglobin,13.6,g/dL,12.0,17.5,2024-03-16,1,Y,718-7
+SUBJ-015,PLT,Platelet count,235.7,10^3/uL,150.0,450.0,2024-03-16,1,Y,777-3
+SUBJ-015,TSH,Thyroid stimulating hormone,1.4,uIU/mL,0.4,4.0,2024-03-16,1,Y,3016-3
+SUBJ-015,BILI,Bilirubin total,0.4,mg/dL,0.1,1.2,2024-03-16,1,Y,1975-2
+SUBJ-015,ALT,Alanine aminotransferase,28.0,U/L,7.0,56.0,2024-04-06,2,,1988-10-01
+SUBJ-015,AST,Aspartate aminotransferase,22.9,U/L,10.0,40.0,2024-04-06,2,,1920-8-5
+SUBJ-015,WBC,White blood cell count,7.0,10^3/uL,4.0,11.0,2024-04-06,2,,6690-2
+SUBJ-015,ANC,Absolute neutrophil count,4.1,10^3/uL,1.5,7.5,2024-04-06,2,,751-8
+SUBJ-015,HGB,Hemoglobin,14.4,g/dL,12.0,17.5,2024-04-06,2,,718-7
+SUBJ-015,PLT,Platelet count,278.6,10^3/uL,150.0,450.0,2024-04-06,2,,777-3
+SUBJ-015,TSH,Thyroid stimulating hormone,1.9,uIU/mL,0.4,4.0,2024-04-06,2,,3016-3
+SUBJ-015,BILI,Bilirubin total,0.6,mg/dL,0.1,1.2,2024-04-06,2,,1975-2
+SUBJ-015,ALT,Alanine aminotransferase,140.0,U/L,7.0,56.0,2024-04-27,3,,1988-10-01
+SUBJ-015,AST,Aspartate aminotransferase,100.0,U/L,10.0,40.0,2024-04-27,3,,1920-8-5
+SUBJ-015,WBC,White blood cell count,8.0,10^3/uL,4.0,11.0,2024-04-27,3,,6690-2
+SUBJ-015,ANC,Absolute neutrophil count,4.9,10^3/uL,1.5,7.5,2024-04-27,3,,751-8
+SUBJ-015,HGB,Hemoglobin,15.1,g/dL,12.0,17.5,2024-04-27,3,,718-7
+SUBJ-015,PLT,Platelet count,321.4,10^3/uL,150.0,450.0,2024-04-27,3,,777-3
+SUBJ-015,TSH,Thyroid stimulating hormone,2.5,uIU/mL,0.4,4.0,2024-04-27,3,,3016-3
+SUBJ-015,BILI,Bilirubin total,0.7,mg/dL,0.1,1.2,2024-04-27,3,,1975-2
+SUBJ-016,ALT,Alanine aminotransferase,28.0,U/L,7.0,56.0,2024-03-19,1,Y,1988-10-01
+SUBJ-016,AST,Aspartate aminotransferase,22.9,U/L,10.0,40.0,2024-03-19,1,Y,1920-8-5
+SUBJ-016,WBC,White blood cell count,7.0,10^3/uL,4.0,11.0,2024-03-19,1,Y,6690-2
+SUBJ-016,ANC,Absolute neutrophil count,4.1,10^3/uL,1.5,7.5,2024-03-19,1,Y,751-8
+SUBJ-016,HGB,Hemoglobin,14.4,g/dL,12.0,17.5,2024-03-19,1,Y,718-7
+SUBJ-016,PLT,Platelet count,278.6,10^3/uL,150.0,450.0,2024-03-19,1,Y,777-3
+SUBJ-016,TSH,Thyroid stimulating hormone,1.9,uIU/mL,0.4,4.0,2024-03-19,1,Y,3016-3
+SUBJ-016,BILI,Bilirubin total,0.6,mg/dL,0.1,1.2,2024-03-19,1,Y,1975-2
+SUBJ-016,ALT,Alanine aminotransferase,35.0,U/L,7.0,56.0,2024-04-09,2,,1988-10-01
+SUBJ-016,AST,Aspartate aminotransferase,27.1,U/L,10.0,40.0,2024-04-09,2,,1920-8-5
+SUBJ-016,WBC,White blood cell count,8.0,10^3/uL,4.0,11.0,2024-04-09,2,,6690-2
+SUBJ-016,ANC,Absolute neutrophil count,4.9,10^3/uL,1.5,7.5,2024-04-09,2,,751-8
+SUBJ-016,HGB,Hemoglobin,15.1,g/dL,12.0,17.5,2024-04-09,2,,718-7
+SUBJ-016,PLT,Platelet count,321.4,10^3/uL,150.0,450.0,2024-04-09,2,,777-3
+SUBJ-016,TSH,Thyroid stimulating hormone,2.5,uIU/mL,0.4,4.0,2024-04-09,2,,3016-3
+SUBJ-016,BILI,Bilirubin total,0.7,mg/dL,0.1,1.2,2024-04-09,2,,1975-2
+SUBJ-016,ALT,Alanine aminotransferase,42.0,U/L,7.0,56.0,2024-04-30,3,,1988-10-01
+SUBJ-016,AST,Aspartate aminotransferase,31.4,U/L,10.0,40.0,2024-04-30,3,,1920-8-5
+SUBJ-016,WBC,White blood cell count,9.0,10^3/uL,4.0,11.0,2024-04-30,3,,6690-2
+SUBJ-016,ANC,Absolute neutrophil count,5.8,10^3/uL,1.5,7.5,2024-04-30,3,,751-8
+SUBJ-016,HGB,Hemoglobin,15.9,g/dL,12.0,17.5,2024-04-30,3,,718-7
+SUBJ-016,PLT,Platelet count,364.3,10^3/uL,150.0,450.0,2024-04-30,3,,777-3
+SUBJ-016,TSH,Thyroid stimulating hormone,3.0,uIU/mL,0.4,4.0,2024-04-30,3,,3016-3
+SUBJ-016,BILI,Bilirubin total,0.9,mg/dL,0.1,1.2,2024-04-30,3,,1975-2
+SUBJ-017,ALT,Alanine aminotransferase,35.0,U/L,7.0,56.0,2024-03-22,1,Y,1988-10-01
+SUBJ-017,AST,Aspartate aminotransferase,27.1,U/L,10.0,40.0,2024-03-22,1,Y,1920-8-5
+SUBJ-017,WBC,White blood cell count,8.0,10^3/uL,4.0,11.0,2024-03-22,1,Y,6690-2
+SUBJ-017,ANC,Absolute neutrophil count,4.9,10^3/uL,1.5,7.5,2024-03-22,1,Y,751-8
+SUBJ-017,HGB,Hemoglobin,15.1,g/dL,12.0,17.5,2024-03-22,1,Y,718-7
+SUBJ-017,PLT,Platelet count,321.4,10^3/uL,150.0,450.0,2024-03-22,1,Y,777-3
+SUBJ-017,TSH,Thyroid stimulating hormone,2.5,uIU/mL,0.4,4.0,2024-03-22,1,Y,3016-3
+SUBJ-017,BILI,Bilirubin total,0.7,mg/dL,0.1,1.2,2024-03-22,1,Y,1975-2
+SUBJ-017,ALT,Alanine aminotransferase,42.0,U/L,7.0,56.0,2024-04-12,2,,1988-10-01
+SUBJ-017,AST,Aspartate aminotransferase,31.4,U/L,10.0,40.0,2024-04-12,2,,1920-8-5
+SUBJ-017,WBC,White blood cell count,9.0,10^3/uL,4.0,11.0,2024-04-12,2,,6690-2
+SUBJ-017,ANC,Absolute neutrophil count,5.8,10^3/uL,1.5,7.5,2024-04-12,2,,751-8
+SUBJ-017,HGB,Hemoglobin,15.9,g/dL,12.0,17.5,2024-04-12,2,,718-7
+SUBJ-017,PLT,Platelet count,364.3,10^3/uL,150.0,450.0,2024-04-12,2,,777-3
+SUBJ-017,TSH,Thyroid stimulating hormone,3.0,uIU/mL,0.4,4.0,2024-04-12,2,,3016-3
+SUBJ-017,BILI,Bilirubin total,0.9,mg/dL,0.1,1.2,2024-04-12,2,,1975-2
+SUBJ-017,ALT,Alanine aminotransferase,49.0,U/L,7.0,56.0,2024-05-03,3,,1988-10-01
+SUBJ-017,AST,Aspartate aminotransferase,35.7,U/L,10.0,40.0,2024-05-03,3,,1920-8-5
+SUBJ-017,WBC,White blood cell count,10.0,10^3/uL,4.0,11.0,2024-05-03,3,,6690-2
+SUBJ-017,ANC,Absolute neutrophil count,6.6,10^3/uL,1.5,7.5,2024-05-03,3,,751-8
+SUBJ-017,HGB,Hemoglobin,16.7,g/dL,12.0,17.5,2024-05-03,3,,718-7
+SUBJ-017,PLT,Platelet count,407.1,10^3/uL,150.0,450.0,2024-05-03,3,,777-3
+SUBJ-017,TSH,Thyroid stimulating hormone,3.5,uIU/mL,0.4,4.0,2024-05-03,3,,3016-3
+SUBJ-017,BILI,Bilirubin total,1.0,mg/dL,0.1,1.2,2024-05-03,3,,1975-2
+SUBJ-018,ALT,Alanine aminotransferase,42.0,U/L,7.0,56.0,2024-03-25,1,Y,1988-10-01
+SUBJ-018,AST,Aspartate aminotransferase,31.4,U/L,10.0,40.0,2024-03-25,1,Y,1920-8-5
+SUBJ-018,WBC,White blood cell count,9.0,10^3/uL,4.0,11.0,2024-03-25,1,Y,6690-2
+SUBJ-018,ANC,Absolute neutrophil count,5.8,10^3/uL,1.5,7.5,2024-03-25,1,Y,751-8
+SUBJ-018,HGB,Hemoglobin,15.9,g/dL,12.0,17.5,2024-03-25,1,Y,718-7
+SUBJ-018,PLT,Platelet count,364.3,10^3/uL,150.0,450.0,2024-03-25,1,Y,777-3
+SUBJ-018,TSH,Thyroid stimulating hormone,3.0,uIU/mL,0.4,4.0,2024-03-25,1,Y,3016-3
+SUBJ-018,BILI,Bilirubin total,0.9,mg/dL,0.1,1.2,2024-03-25,1,Y,1975-2
+SUBJ-018,ALT,Alanine aminotransferase,49.0,U/L,7.0,56.0,2024-04-15,2,,1988-10-01
+SUBJ-018,AST,Aspartate aminotransferase,35.7,U/L,10.0,40.0,2024-04-15,2,,1920-8-5
+SUBJ-018,WBC,White blood cell count,10.0,10^3/uL,4.0,11.0,2024-04-15,2,,6690-2
+SUBJ-018,ANC,Absolute neutrophil count,6.6,10^3/uL,1.5,7.5,2024-04-15,2,,751-8
+SUBJ-018,HGB,Hemoglobin,16.7,g/dL,12.0,17.5,2024-04-15,2,,718-7
+SUBJ-018,PLT,Platelet count,407.1,10^3/uL,150.0,450.0,2024-04-15,2,,777-3
+SUBJ-018,TSH,Thyroid stimulating hormone,3.5,uIU/mL,0.4,4.0,2024-04-15,2,,3016-3
+SUBJ-018,BILI,Bilirubin total,1.0,mg/dL,0.1,1.2,2024-04-15,2,,1975-2
+SUBJ-018,ALT,Alanine aminotransferase,7.0,U/L,7.0,56.0,2024-05-06,3,,1988-10-01
+SUBJ-018,AST,Aspartate aminotransferase,10.0,U/L,10.0,40.0,2024-05-06,3,,1920-8-5
+SUBJ-018,WBC,White blood cell count,4.0,10^3/uL,4.0,11.0,2024-05-06,3,,6690-2
+SUBJ-018,ANC,Absolute neutrophil count,1.5,10^3/uL,1.5,7.5,2024-05-06,3,,751-8
+SUBJ-018,HGB,Hemoglobin,12.0,g/dL,12.0,17.5,2024-05-06,3,,718-7
+SUBJ-018,PLT,Platelet count,150.0,10^3/uL,150.0,450.0,2024-05-06,3,,777-3
+SUBJ-018,TSH,Thyroid stimulating hormone,0.4,uIU/mL,0.4,4.0,2024-05-06,3,,3016-3
+SUBJ-018,BILI,Bilirubin total,0.1,mg/dL,0.1,1.2,2024-05-06,3,,1975-2
+SUBJ-019,ALT,Alanine aminotransferase,49.0,U/L,7.0,56.0,2024-03-28,1,Y,1988-10-01
+SUBJ-019,AST,Aspartate aminotransferase,35.7,U/L,10.0,40.0,2024-03-28,1,Y,1920-8-5
+SUBJ-019,WBC,White blood cell count,10.0,10^3/uL,4.0,11.0,2024-03-28,1,Y,6690-2
+SUBJ-019,ANC,Absolute neutrophil count,6.6,10^3/uL,1.5,7.5,2024-03-28,1,Y,751-8
+SUBJ-019,HGB,Hemoglobin,16.7,g/dL,12.0,17.5,2024-03-28,1,Y,718-7
+SUBJ-019,PLT,Platelet count,407.1,10^3/uL,150.0,450.0,2024-03-28,1,Y,777-3
+SUBJ-019,TSH,Thyroid stimulating hormone,3.5,uIU/mL,0.4,4.0,2024-03-28,1,Y,3016-3
+SUBJ-019,BILI,Bilirubin total,1.0,mg/dL,0.1,1.2,2024-03-28,1,Y,1975-2
+SUBJ-019,ALT,Alanine aminotransferase,7.0,U/L,7.0,56.0,2024-04-18,2,,1988-10-01
+SUBJ-019,AST,Aspartate aminotransferase,10.0,U/L,10.0,40.0,2024-04-18,2,,1920-8-5
+SUBJ-019,WBC,White blood cell count,4.0,10^3/uL,4.0,11.0,2024-04-18,2,,6690-2
+SUBJ-019,ANC,Absolute neutrophil count,1.5,10^3/uL,1.5,7.5,2024-04-18,2,,751-8
+SUBJ-019,HGB,Hemoglobin,12.0,g/dL,12.0,17.5,2024-04-18,2,,718-7
+SUBJ-019,PLT,Platelet count,150.0,10^3/uL,150.0,450.0,2024-04-18,2,,777-3
+SUBJ-019,TSH,Thyroid stimulating hormone,0.4,uIU/mL,0.4,4.0,2024-04-18,2,,3016-3
+SUBJ-019,BILI,Bilirubin total,0.1,mg/dL,0.1,1.2,2024-04-18,2,,1975-2
+SUBJ-019,ALT,Alanine aminotransferase,14.0,U/L,7.0,56.0,2024-05-09,3,,1988-10-01
+SUBJ-019,AST,Aspartate aminotransferase,14.3,U/L,10.0,40.0,2024-05-09,3,,1920-8-5
+SUBJ-019,WBC,White blood cell count,5.0,10^3/uL,4.0,11.0,2024-05-09,3,,6690-2
+SUBJ-019,ANC,Absolute neutrophil count,2.4,10^3/uL,1.5,7.5,2024-05-09,3,,751-8
+SUBJ-019,HGB,Hemoglobin,12.8,g/dL,12.0,17.5,2024-05-09,3,,718-7
+SUBJ-019,PLT,Platelet count,192.9,10^3/uL,150.0,450.0,2024-05-09,3,,777-3
+SUBJ-019,TSH,Thyroid stimulating hormone,0.9,uIU/mL,0.4,4.0,2024-05-09,3,,3016-3
+SUBJ-019,BILI,Bilirubin total,0.3,mg/dL,0.1,1.2,2024-05-09,3,,1975-2
+SUBJ-020,ALT,Alanine aminotransferase,7.0,U/L,7.0,56.0,2024-03-31,1,Y,1988-10-01
+SUBJ-020,AST,Aspartate aminotransferase,10.0,U/L,10.0,40.0,2024-03-31,1,Y,1920-8-5
+SUBJ-020,WBC,White blood cell count,4.0,10^3/uL,4.0,11.0,2024-03-31,1,Y,6690-2
+SUBJ-020,ANC,Absolute neutrophil count,1.5,10^3/uL,1.5,7.5,2024-03-31,1,Y,751-8
+SUBJ-020,HGB,Hemoglobin,12.0,g/dL,12.0,17.5,2024-03-31,1,Y,718-7
+SUBJ-020,PLT,Platelet count,150.0,10^3/uL,150.0,450.0,2024-03-31,1,Y,777-3
+SUBJ-020,TSH,Thyroid stimulating hormone,0.4,uIU/mL,0.4,4.0,2024-03-31,1,Y,3016-3
+SUBJ-020,BILI,Bilirubin total,0.1,mg/dL,0.1,1.2,2024-03-31,1,Y,1975-2
+SUBJ-020,ALT,Alanine aminotransferase,14.0,U/L,7.0,56.0,2024-04-21,2,,1988-10-01
+SUBJ-020,AST,Aspartate aminotransferase,14.3,U/L,10.0,40.0,2024-04-21,2,,1920-8-5
+SUBJ-020,WBC,White blood cell count,5.0,10^3/uL,4.0,11.0,2024-04-21,2,,6690-2
+SUBJ-020,ANC,Absolute neutrophil count,2.4,10^3/uL,1.5,7.5,2024-04-21,2,,751-8
+SUBJ-020,HGB,Hemoglobin,12.8,g/dL,12.0,17.5,2024-04-21,2,,718-7
+SUBJ-020,PLT,Platelet count,192.9,10^3/uL,150.0,450.0,2024-04-21,2,,777-3
+SUBJ-020,TSH,Thyroid stimulating hormone,0.9,uIU/mL,0.4,4.0,2024-04-21,2,,3016-3
+SUBJ-020,BILI,Bilirubin total,0.3,mg/dL,0.1,1.2,2024-04-21,2,,1975-2
+SUBJ-020,ALT,Alanine aminotransferase,21.0,U/L,7.0,56.0,2024-05-12,3,,1988-10-01
+SUBJ-020,AST,Aspartate aminotransferase,18.6,U/L,10.0,40.0,2024-05-12,3,,1920-8-5
+SUBJ-020,WBC,White blood cell count,6.0,10^3/uL,4.0,11.0,2024-05-12,3,,6690-2
+SUBJ-020,ANC,Absolute neutrophil count,3.2,10^3/uL,1.5,7.5,2024-05-12,3,,751-8
+SUBJ-020,HGB,Hemoglobin,13.6,g/dL,12.0,17.5,2024-05-12,3,,718-7
+SUBJ-020,PLT,Platelet count,235.7,10^3/uL,150.0,450.0,2024-05-12,3,,777-3
+SUBJ-020,TSH,Thyroid stimulating hormone,1.4,uIU/mL,0.4,4.0,2024-05-12,3,,3016-3
+SUBJ-020,BILI,Bilirubin total,0.4,mg/dL,0.1,1.2,2024-05-12,3,,1975-2

@@ -1,0 +1,361 @@
+SUBJID,VSTESTCD,VSTEST,VSORRES,VSORRESU,VSDTC,VISITNUM,VSBLFL
+SUBJ-001,SYSBP,Systolic blood pressure,113.0,mmHg,2024-02-10,1,Y
+SUBJ-001,DIABP,Diastolic blood pressure,73.0,mmHg,2024-02-10,1,Y
+SUBJ-001,HR,Heart rate,63.0,bpm,2024-02-10,1,Y
+SUBJ-001,TEMP,Temperature,36.7,degC,2024-02-10,1,Y
+SUBJ-001,WEIGHT,Weight,68.0,kg,2024-02-10,1,Y
+SUBJ-001,HEIGHT,Height,162.0,cm,2024-02-10,1,Y
+SUBJ-001,SYSBP,Systolic blood pressure,116.0,mmHg,2024-03-09,2,
+SUBJ-001,DIABP,Diastolic blood pressure,76.0,mmHg,2024-03-09,2,
+SUBJ-001,HR,Heart rate,66.0,bpm,2024-03-09,2,
+SUBJ-001,TEMP,Temperature,36.8,degC,2024-03-09,2,
+SUBJ-001,WEIGHT,Weight,71.0,kg,2024-03-09,2,
+SUBJ-001,HEIGHT,Height,163.0,cm,2024-03-09,2,
+SUBJ-001,SYSBP,Systolic blood pressure,119.0,mmHg,2024-04-06,3,
+SUBJ-001,DIABP,Diastolic blood pressure,79.0,mmHg,2024-04-06,3,
+SUBJ-001,HR,Heart rate,69.0,bpm,2024-04-06,3,
+SUBJ-001,TEMP,Temperature,36.9,degC,2024-04-06,3,
+SUBJ-001,WEIGHT,Weight,74.0,kg,2024-04-06,3,
+SUBJ-001,HEIGHT,Height,164.0,cm,2024-04-06,3,
+SUBJ-002,SYSBP,Systolic blood pressure,116.0,mmHg,2024-02-13,1,Y
+SUBJ-002,DIABP,Diastolic blood pressure,76.0,mmHg,2024-02-13,1,Y
+SUBJ-002,HR,Heart rate,66.0,bpm,2024-02-13,1,Y
+SUBJ-002,TEMP,Temperature,36.8,degC,2024-02-13,1,Y
+SUBJ-002,WEIGHT,Weight,71.0,kg,2024-02-13,1,Y
+SUBJ-002,HEIGHT,Height,163.0,cm,2024-02-13,1,Y
+SUBJ-002,SYSBP,Systolic blood pressure,122.0,mmHg,2024-03-12,2,
+SUBJ-002,DIABP,Diastolic blood pressure,82.0,mmHg,2024-03-12,2,
+SUBJ-002,HR,Heart rate,72.0,bpm,2024-03-12,2,
+SUBJ-002,TEMP,Temperature,36.9,degC,2024-03-12,2,
+SUBJ-002,WEIGHT,Weight,77.0,kg,2024-03-12,2,
+SUBJ-002,HEIGHT,Height,164.0,cm,2024-03-12,2,
+SUBJ-002,SYSBP,Systolic blood pressure,128.0,mmHg,2024-04-09,3,
+SUBJ-002,DIABP,Diastolic blood pressure,88.0,mmHg,2024-04-09,3,
+SUBJ-002,HR,Heart rate,78.0,bpm,2024-04-09,3,
+SUBJ-002,TEMP,Temperature,36.5,degC,2024-04-09,3,
+SUBJ-002,WEIGHT,Weight,83.0,kg,2024-04-09,3,
+SUBJ-002,HEIGHT,Height,165.0,cm,2024-04-09,3,
+SUBJ-003,SYSBP,Systolic blood pressure,119.0,mmHg,2024-02-16,1,Y
+SUBJ-003,DIABP,Diastolic blood pressure,79.0,mmHg,2024-02-16,1,Y
+SUBJ-003,HR,Heart rate,69.0,bpm,2024-02-16,1,Y
+SUBJ-003,TEMP,Temperature,36.9,degC,2024-02-16,1,Y
+SUBJ-003,WEIGHT,Weight,74.0,kg,2024-02-16,1,Y
+SUBJ-003,HEIGHT,Height,164.0,cm,2024-02-16,1,Y
+SUBJ-003,SYSBP,Systolic blood pressure,128.0,mmHg,2024-03-15,2,
+SUBJ-003,DIABP,Diastolic blood pressure,88.0,mmHg,2024-03-15,2,
+SUBJ-003,HR,Heart rate,78.0,bpm,2024-03-15,2,
+SUBJ-003,TEMP,Temperature,36.5,degC,2024-03-15,2,
+SUBJ-003,WEIGHT,Weight,83.0,kg,2024-03-15,2,
+SUBJ-003,HEIGHT,Height,165.0,cm,2024-03-15,2,
+SUBJ-003,SYSBP,Systolic blood pressure,137.0,mmHg,2024-04-12,3,
+SUBJ-003,DIABP,Diastolic blood pressure,76.0,mmHg,2024-04-12,3,
+SUBJ-003,HR,Heart rate,87.0,bpm,2024-04-12,3,
+SUBJ-003,TEMP,Temperature,36.6,degC,2024-04-12,3,
+SUBJ-003,WEIGHT,Weight,66.0,kg,2024-04-12,3,
+SUBJ-003,HEIGHT,Height,166.0,cm,2024-04-12,3,
+SUBJ-004,SYSBP,Systolic blood pressure,122.0,mmHg,2024-02-19,1,Y
+SUBJ-004,DIABP,Diastolic blood pressure,82.0,mmHg,2024-02-19,1,Y
+SUBJ-004,HR,Heart rate,72.0,bpm,2024-02-19,1,Y
+SUBJ-004,TEMP,Temperature,36.5,degC,2024-02-19,1,Y
+SUBJ-004,WEIGHT,Weight,77.0,kg,2024-02-19,1,Y
+SUBJ-004,HEIGHT,Height,165.0,cm,2024-02-19,1,Y
+SUBJ-004,SYSBP,Systolic blood pressure,134.0,mmHg,2024-03-18,2,
+SUBJ-004,DIABP,Diastolic blood pressure,73.0,mmHg,2024-03-18,2,
+SUBJ-004,HR,Heart rate,84.0,bpm,2024-03-18,2,
+SUBJ-004,TEMP,Temperature,36.6,degC,2024-03-18,2,
+SUBJ-004,WEIGHT,Weight,89.0,kg,2024-03-18,2,
+SUBJ-004,HEIGHT,Height,166.0,cm,2024-03-18,2,
+SUBJ-004,SYSBP,Systolic blood pressure,115.0,mmHg,2024-04-15,3,
+SUBJ-004,DIABP,Diastolic blood pressure,85.0,mmHg,2024-04-15,3,
+SUBJ-004,HR,Heart rate,65.0,bpm,2024-04-15,3,
+SUBJ-004,TEMP,Temperature,36.7,degC,2024-04-15,3,
+SUBJ-004,WEIGHT,Weight,75.0,kg,2024-04-15,3,
+SUBJ-004,HEIGHT,Height,167.0,cm,2024-04-15,3,
+SUBJ-005,SYSBP,Systolic blood pressure,125.0,mmHg,2024-02-22,1,Y
+SUBJ-005,DIABP,Diastolic blood pressure,85.0,mmHg,2024-02-22,1,Y
+SUBJ-005,HR,Heart rate,75.0,bpm,2024-02-22,1,Y
+SUBJ-005,TEMP,Temperature,36.6,degC,2024-02-22,1,Y
+SUBJ-005,WEIGHT,Weight,80.0,kg,2024-02-22,1,Y
+SUBJ-005,HEIGHT,Height,166.0,cm,2024-02-22,1,Y
+SUBJ-005,SYSBP,Systolic blood pressure,140.0,mmHg,2024-03-21,2,
+SUBJ-005,DIABP,Diastolic blood pressure,79.0,mmHg,2024-03-21,2,
+SUBJ-005,HR,Heart rate,90.0,bpm,2024-03-21,2,
+SUBJ-005,TEMP,Temperature,36.7,degC,2024-03-21,2,
+SUBJ-005,WEIGHT,Weight,69.0,kg,2024-03-21,2,
+SUBJ-005,HEIGHT,Height,167.0,cm,2024-03-21,2,
+SUBJ-005,SYSBP,Systolic blood pressure,124.0,mmHg,2024-04-18,3,
+SUBJ-005,DIABP,Diastolic blood pressure,73.0,mmHg,2024-04-18,3,
+SUBJ-005,HR,Heart rate,74.0,bpm,2024-04-18,3,
+SUBJ-005,TEMP,Temperature,36.8,degC,2024-04-18,3,
+SUBJ-005,WEIGHT,Weight,84.0,kg,2024-04-18,3,
+SUBJ-005,HEIGHT,Height,168.0,cm,2024-04-18,3,
+SUBJ-006,SYSBP,Systolic blood pressure,128.0,mmHg,2024-02-25,1,Y
+SUBJ-006,DIABP,Diastolic blood pressure,88.0,mmHg,2024-02-25,1,Y
+SUBJ-006,HR,Heart rate,78.0,bpm,2024-02-25,1,Y
+SUBJ-006,TEMP,Temperature,36.7,degC,2024-02-25,1,Y
+SUBJ-006,WEIGHT,Weight,83.0,kg,2024-02-25,1,Y
+SUBJ-006,HEIGHT,Height,167.0,cm,2024-02-25,1,Y
+SUBJ-006,SYSBP,Systolic blood pressure,115.0,mmHg,2024-03-24,2,
+SUBJ-006,DIABP,Diastolic blood pressure,85.0,mmHg,2024-03-24,2,
+SUBJ-006,HR,Heart rate,65.0,bpm,2024-03-24,2,
+SUBJ-006,TEMP,Temperature,36.8,degC,2024-03-24,2,
+SUBJ-006,WEIGHT,Weight,75.0,kg,2024-03-24,2,
+SUBJ-006,HEIGHT,Height,168.0,cm,2024-03-24,2,
+SUBJ-006,SYSBP,Systolic blood pressure,133.0,mmHg,2024-04-21,3,
+SUBJ-006,DIABP,Diastolic blood pressure,82.0,mmHg,2024-04-21,3,
+SUBJ-006,HR,Heart rate,83.0,bpm,2024-04-21,3,
+SUBJ-006,TEMP,Temperature,36.9,degC,2024-04-21,3,
+SUBJ-006,WEIGHT,Weight,67.0,kg,2024-04-21,3,
+SUBJ-006,HEIGHT,Height,169.0,cm,2024-04-21,3,
+SUBJ-007,SYSBP,Systolic blood pressure,131.0,mmHg,2024-02-28,1,Y
+SUBJ-007,DIABP,Diastolic blood pressure,70.0,mmHg,2024-02-28,1,Y
+SUBJ-007,HR,Heart rate,81.0,bpm,2024-02-28,1,Y
+SUBJ-007,TEMP,Temperature,36.8,degC,2024-02-28,1,Y
+SUBJ-007,WEIGHT,Weight,86.0,kg,2024-02-28,1,Y
+SUBJ-007,HEIGHT,Height,168.0,cm,2024-02-28,1,Y
+SUBJ-007,SYSBP,Systolic blood pressure,121.0,mmHg,2024-03-27,2,
+SUBJ-007,DIABP,Diastolic blood pressure,70.0,mmHg,2024-03-27,2,
+SUBJ-007,HR,Heart rate,71.0,bpm,2024-03-27,2,
+SUBJ-007,TEMP,Temperature,36.9,degC,2024-03-27,2,
+SUBJ-007,WEIGHT,Weight,81.0,kg,2024-03-27,2,
+SUBJ-007,HEIGHT,Height,169.0,cm,2024-03-27,2,
+SUBJ-007,SYSBP,Systolic blood pressure,111.0,mmHg,2024-04-24,3,
+SUBJ-007,DIABP,Diastolic blood pressure,70.0,mmHg,2024-04-24,3,
+SUBJ-007,HR,Heart rate,61.0,bpm,2024-04-24,3,
+SUBJ-007,TEMP,Temperature,36.5,degC,2024-04-24,3,
+SUBJ-007,WEIGHT,Weight,76.0,kg,2024-04-24,3,
+SUBJ-007,HEIGHT,Height,170.0,cm,2024-04-24,3,
+SUBJ-008,SYSBP,Systolic blood pressure,134.0,mmHg,2024-03-02,1,Y
+SUBJ-008,DIABP,Diastolic blood pressure,73.0,mmHg,2024-03-02,1,Y
+SUBJ-008,HR,Heart rate,84.0,bpm,2024-03-02,1,Y
+SUBJ-008,TEMP,Temperature,36.9,degC,2024-03-02,1,Y
+SUBJ-008,WEIGHT,Weight,89.0,kg,2024-03-02,1,Y
+SUBJ-008,HEIGHT,Height,169.0,cm,2024-03-02,1,Y
+SUBJ-008,SYSBP,Systolic blood pressure,127.0,mmHg,2024-03-30,2,
+SUBJ-008,DIABP,Diastolic blood pressure,76.0,mmHg,2024-03-30,2,
+SUBJ-008,HR,Heart rate,77.0,bpm,2024-03-30,2,
+SUBJ-008,TEMP,Temperature,36.5,degC,2024-03-30,2,
+SUBJ-008,WEIGHT,Weight,87.0,kg,2024-03-30,2,
+SUBJ-008,HEIGHT,Height,170.0,cm,2024-03-30,2,
+SUBJ-008,SYSBP,Systolic blood pressure,120.0,mmHg,2024-04-27,3,
+SUBJ-008,DIABP,Diastolic blood pressure,79.0,mmHg,2024-04-27,3,
+SUBJ-008,HR,Heart rate,70.0,bpm,2024-04-27,3,
+SUBJ-008,TEMP,Temperature,36.6,degC,2024-04-27,3,
+SUBJ-008,WEIGHT,Weight,85.0,kg,2024-04-27,3,
+SUBJ-008,HEIGHT,Height,171.0,cm,2024-04-27,3,
+SUBJ-009,SYSBP,Systolic blood pressure,137.0,mmHg,2024-03-05,1,Y
+SUBJ-009,DIABP,Diastolic blood pressure,76.0,mmHg,2024-03-05,1,Y
+SUBJ-009,HR,Heart rate,87.0,bpm,2024-03-05,1,Y
+SUBJ-009,TEMP,Temperature,36.5,degC,2024-03-05,1,Y
+SUBJ-009,WEIGHT,Weight,66.0,kg,2024-03-05,1,Y
+SUBJ-009,HEIGHT,Height,170.0,cm,2024-03-05,1,Y
+SUBJ-009,SYSBP,Systolic blood pressure,133.0,mmHg,2024-04-02,2,
+SUBJ-009,DIABP,Diastolic blood pressure,82.0,mmHg,2024-04-02,2,
+SUBJ-009,HR,Heart rate,83.0,bpm,2024-04-02,2,
+SUBJ-009,TEMP,Temperature,36.6,degC,2024-04-02,2,
+SUBJ-009,WEIGHT,Weight,67.0,kg,2024-04-02,2,
+SUBJ-009,HEIGHT,Height,171.0,cm,2024-04-02,2,
+SUBJ-009,SYSBP,Systolic blood pressure,129.0,mmHg,2024-04-30,3,
+SUBJ-009,DIABP,Diastolic blood pressure,88.0,mmHg,2024-04-30,3,
+SUBJ-009,HR,Heart rate,79.0,bpm,2024-04-30,3,
+SUBJ-009,TEMP,Temperature,36.7,degC,2024-04-30,3,
+SUBJ-009,WEIGHT,Weight,68.0,kg,2024-04-30,3,
+SUBJ-009,HEIGHT,Height,172.0,cm,2024-04-30,3,
+SUBJ-010,SYSBP,Systolic blood pressure,140.0,mmHg,2024-03-08,1,Y
+SUBJ-010,DIABP,Diastolic blood pressure,79.0,mmHg,2024-03-08,1,Y
+SUBJ-010,HR,Heart rate,90.0,bpm,2024-03-08,1,Y
+SUBJ-010,TEMP,Temperature,36.6,degC,2024-03-08,1,Y
+SUBJ-010,WEIGHT,Weight,69.0,kg,2024-03-08,1,Y
+SUBJ-010,HEIGHT,Height,171.0,cm,2024-03-08,1,Y
+SUBJ-010,SYSBP,Systolic blood pressure,139.0,mmHg,2024-04-05,2,
+SUBJ-010,DIABP,Diastolic blood pressure,88.0,mmHg,2024-04-05,2,
+SUBJ-010,HR,Heart rate,89.0,bpm,2024-04-05,2,
+SUBJ-010,TEMP,Temperature,36.7,degC,2024-04-05,2,
+SUBJ-010,WEIGHT,Weight,73.0,kg,2024-04-05,2,
+SUBJ-010,HEIGHT,Height,172.0,cm,2024-04-05,2,
+SUBJ-010,SYSBP,Systolic blood pressure,138.0,mmHg,2024-05-03,3,
+SUBJ-010,DIABP,Diastolic blood pressure,76.0,mmHg,2024-05-03,3,
+SUBJ-010,HR,Heart rate,88.0,bpm,2024-05-03,3,
+SUBJ-010,TEMP,Temperature,36.8,degC,2024-05-03,3,
+SUBJ-010,WEIGHT,Weight,77.0,kg,2024-05-03,3,
+SUBJ-010,HEIGHT,Height,173.0,cm,2024-05-03,3,
+SUBJ-011,SYSBP,Systolic blood pressure,112.0,mmHg,2024-03-11,1,Y
+SUBJ-011,DIABP,Diastolic blood pressure,82.0,mmHg,2024-03-11,1,Y
+SUBJ-011,HR,Heart rate,62.0,bpm,2024-03-11,1,Y
+SUBJ-011,TEMP,Temperature,36.7,degC,2024-03-11,1,Y
+SUBJ-011,WEIGHT,Weight,72.0,kg,2024-03-11,1,Y
+SUBJ-011,HEIGHT,Height,172.0,cm,2024-03-11,1,Y
+SUBJ-011,SYSBP,Systolic blood pressure,114.0,mmHg,2024-04-08,2,
+SUBJ-011,DIABP,Diastolic blood pressure,73.0,mmHg,2024-04-08,2,
+SUBJ-011,HR,Heart rate,64.0,bpm,2024-04-08,2,
+SUBJ-011,TEMP,Temperature,36.8,degC,2024-04-08,2,
+SUBJ-011,WEIGHT,Weight,79.0,kg,2024-04-08,2,
+SUBJ-011,HEIGHT,Height,173.0,cm,2024-04-08,2,
+SUBJ-011,SYSBP,Systolic blood pressure,116.0,mmHg,2024-05-06,3,
+SUBJ-011,DIABP,Diastolic blood pressure,85.0,mmHg,2024-05-06,3,
+SUBJ-011,HR,Heart rate,66.0,bpm,2024-05-06,3,
+SUBJ-011,TEMP,Temperature,36.9,degC,2024-05-06,3,
+SUBJ-011,WEIGHT,Weight,86.0,kg,2024-05-06,3,
+SUBJ-011,HEIGHT,Height,174.0,cm,2024-05-06,3,
+SUBJ-012,SYSBP,Systolic blood pressure,115.0,mmHg,2024-03-14,1,Y
+SUBJ-012,DIABP,Diastolic blood pressure,85.0,mmHg,2024-03-14,1,Y
+SUBJ-012,HR,Heart rate,65.0,bpm,2024-03-14,1,Y
+SUBJ-012,TEMP,Temperature,36.8,degC,2024-03-14,1,Y
+SUBJ-012,WEIGHT,Weight,75.0,kg,2024-03-14,1,Y
+SUBJ-012,HEIGHT,Height,173.0,cm,2024-03-14,1,Y
+SUBJ-012,SYSBP,Systolic blood pressure,120.0,mmHg,2024-04-11,2,
+SUBJ-012,DIABP,Diastolic blood pressure,79.0,mmHg,2024-04-11,2,
+SUBJ-012,HR,Heart rate,70.0,bpm,2024-04-11,2,
+SUBJ-012,TEMP,Temperature,36.9,degC,2024-04-11,2,
+SUBJ-012,WEIGHT,Weight,85.0,kg,2024-04-11,2,
+SUBJ-012,HEIGHT,Height,174.0,cm,2024-04-11,2,
+SUBJ-012,SYSBP,Systolic blood pressure,125.0,mmHg,2024-05-09,3,
+SUBJ-012,DIABP,Diastolic blood pressure,73.0,mmHg,2024-05-09,3,
+SUBJ-012,HR,Heart rate,75.0,bpm,2024-05-09,3,
+SUBJ-012,TEMP,Temperature,36.5,degC,2024-05-09,3,
+SUBJ-012,WEIGHT,Weight,69.0,kg,2024-05-09,3,
+SUBJ-012,HEIGHT,Height,175.0,cm,2024-05-09,3,
+SUBJ-013,SYSBP,Systolic blood pressure,118.0,mmHg,2024-03-17,1,Y
+SUBJ-013,DIABP,Diastolic blood pressure,88.0,mmHg,2024-03-17,1,Y
+SUBJ-013,HR,Heart rate,68.0,bpm,2024-03-17,1,Y
+SUBJ-013,TEMP,Temperature,36.9,degC,2024-03-17,1,Y
+SUBJ-013,WEIGHT,Weight,78.0,kg,2024-03-17,1,Y
+SUBJ-013,HEIGHT,Height,174.0,cm,2024-03-17,1,Y
+SUBJ-013,SYSBP,Systolic blood pressure,126.0,mmHg,2024-04-14,2,
+SUBJ-013,DIABP,Diastolic blood pressure,85.0,mmHg,2024-04-14,2,
+SUBJ-013,HR,Heart rate,76.0,bpm,2024-04-14,2,
+SUBJ-013,TEMP,Temperature,36.5,degC,2024-04-14,2,
+SUBJ-013,WEIGHT,Weight,65.0,kg,2024-04-14,2,
+SUBJ-013,HEIGHT,Height,175.0,cm,2024-04-14,2,
+SUBJ-013,SYSBP,Systolic blood pressure,134.0,mmHg,2024-05-12,3,
+SUBJ-013,DIABP,Diastolic blood pressure,82.0,mmHg,2024-05-12,3,
+SUBJ-013,HR,Heart rate,84.0,bpm,2024-05-12,3,
+SUBJ-013,TEMP,Temperature,36.6,degC,2024-05-12,3,
+SUBJ-013,WEIGHT,Weight,78.0,kg,2024-05-12,3,
+SUBJ-013,HEIGHT,Height,176.0,cm,2024-05-12,3,
+SUBJ-014,SYSBP,Systolic blood pressure,121.0,mmHg,2024-03-20,1,Y
+SUBJ-014,DIABP,Diastolic blood pressure,70.0,mmHg,2024-03-20,1,Y
+SUBJ-014,HR,Heart rate,71.0,bpm,2024-03-20,1,Y
+SUBJ-014,TEMP,Temperature,36.5,degC,2024-03-20,1,Y
+SUBJ-014,WEIGHT,Weight,81.0,kg,2024-03-20,1,Y
+SUBJ-014,HEIGHT,Height,175.0,cm,2024-03-20,1,Y
+SUBJ-014,SYSBP,Systolic blood pressure,132.0,mmHg,2024-04-17,2,
+SUBJ-014,DIABP,Diastolic blood pressure,70.0,mmHg,2024-04-17,2,
+SUBJ-014,HR,Heart rate,82.0,bpm,2024-04-17,2,
+SUBJ-014,TEMP,Temperature,36.6,degC,2024-04-17,2,
+SUBJ-014,WEIGHT,Weight,71.0,kg,2024-04-17,2,
+SUBJ-014,HEIGHT,Height,176.0,cm,2024-04-17,2,
+SUBJ-014,SYSBP,Systolic blood pressure,112.0,mmHg,2024-05-15,3,
+SUBJ-014,DIABP,Diastolic blood pressure,70.0,mmHg,2024-05-15,3,
+SUBJ-014,HR,Heart rate,62.0,bpm,2024-05-15,3,
+SUBJ-014,TEMP,Temperature,36.7,degC,2024-05-15,3,
+SUBJ-014,WEIGHT,Weight,87.0,kg,2024-05-15,3,
+SUBJ-014,HEIGHT,Height,177.0,cm,2024-05-15,3,
+SUBJ-015,SYSBP,Systolic blood pressure,124.0,mmHg,2024-03-23,1,Y
+SUBJ-015,DIABP,Diastolic blood pressure,73.0,mmHg,2024-03-23,1,Y
+SUBJ-015,HR,Heart rate,74.0,bpm,2024-03-23,1,Y
+SUBJ-015,TEMP,Temperature,36.6,degC,2024-03-23,1,Y
+SUBJ-015,WEIGHT,Weight,84.0,kg,2024-03-23,1,Y
+SUBJ-015,HEIGHT,Height,176.0,cm,2024-03-23,1,Y
+SUBJ-015,SYSBP,Systolic blood pressure,138.0,mmHg,2024-04-20,2,
+SUBJ-015,DIABP,Diastolic blood pressure,76.0,mmHg,2024-04-20,2,
+SUBJ-015,HR,Heart rate,88.0,bpm,2024-04-20,2,
+SUBJ-015,TEMP,Temperature,36.7,degC,2024-04-20,2,
+SUBJ-015,WEIGHT,Weight,77.0,kg,2024-04-20,2,
+SUBJ-015,HEIGHT,Height,177.0,cm,2024-04-20,2,
+SUBJ-015,SYSBP,Systolic blood pressure,121.0,mmHg,2024-05-18,3,
+SUBJ-015,DIABP,Diastolic blood pressure,79.0,mmHg,2024-05-18,3,
+SUBJ-015,HR,Heart rate,71.0,bpm,2024-05-18,3,
+SUBJ-015,TEMP,Temperature,36.8,degC,2024-05-18,3,
+SUBJ-015,WEIGHT,Weight,70.0,kg,2024-05-18,3,
+SUBJ-015,HEIGHT,Height,178.0,cm,2024-05-18,3,
+SUBJ-016,SYSBP,Systolic blood pressure,127.0,mmHg,2024-03-26,1,Y
+SUBJ-016,DIABP,Diastolic blood pressure,76.0,mmHg,2024-03-26,1,Y
+SUBJ-016,HR,Heart rate,77.0,bpm,2024-03-26,1,Y
+SUBJ-016,TEMP,Temperature,36.7,degC,2024-03-26,1,Y
+SUBJ-016,WEIGHT,Weight,87.0,kg,2024-03-26,1,Y
+SUBJ-016,HEIGHT,Height,177.0,cm,2024-03-26,1,Y
+SUBJ-016,SYSBP,Systolic blood pressure,113.0,mmHg,2024-04-23,2,
+SUBJ-016,DIABP,Diastolic blood pressure,82.0,mmHg,2024-04-23,2,
+SUBJ-016,HR,Heart rate,63.0,bpm,2024-04-23,2,
+SUBJ-016,TEMP,Temperature,36.8,degC,2024-04-23,2,
+SUBJ-016,WEIGHT,Weight,83.0,kg,2024-04-23,2,
+SUBJ-016,HEIGHT,Height,178.0,cm,2024-04-23,2,
+SUBJ-016,SYSBP,Systolic blood pressure,130.0,mmHg,2024-05-21,3,
+SUBJ-016,DIABP,Diastolic blood pressure,88.0,mmHg,2024-05-21,3,
+SUBJ-016,HR,Heart rate,80.0,bpm,2024-05-21,3,
+SUBJ-016,TEMP,Temperature,36.9,degC,2024-05-21,3,
+SUBJ-016,WEIGHT,Weight,79.0,kg,2024-05-21,3,
+SUBJ-016,HEIGHT,Height,179.0,cm,2024-05-21,3,
+SUBJ-017,SYSBP,Systolic blood pressure,130.0,mmHg,2024-03-29,1,Y
+SUBJ-017,DIABP,Diastolic blood pressure,79.0,mmHg,2024-03-29,1,Y
+SUBJ-017,HR,Heart rate,80.0,bpm,2024-03-29,1,Y
+SUBJ-017,TEMP,Temperature,36.8,degC,2024-03-29,1,Y
+SUBJ-017,WEIGHT,Weight,90.0,kg,2024-03-29,1,Y
+SUBJ-017,HEIGHT,Height,178.0,cm,2024-03-29,1,Y
+SUBJ-017,SYSBP,Systolic blood pressure,119.0,mmHg,2024-04-26,2,
+SUBJ-017,DIABP,Diastolic blood pressure,88.0,mmHg,2024-04-26,2,
+SUBJ-017,HR,Heart rate,69.0,bpm,2024-04-26,2,
+SUBJ-017,TEMP,Temperature,36.9,degC,2024-04-26,2,
+SUBJ-017,WEIGHT,Weight,89.0,kg,2024-04-26,2,
+SUBJ-017,HEIGHT,Height,179.0,cm,2024-04-26,2,
+SUBJ-017,SYSBP,Systolic blood pressure,139.0,mmHg,2024-05-24,3,
+SUBJ-017,DIABP,Diastolic blood pressure,76.0,mmHg,2024-05-24,3,
+SUBJ-017,HR,Heart rate,89.0,bpm,2024-05-24,3,
+SUBJ-017,TEMP,Temperature,36.5,degC,2024-05-24,3,
+SUBJ-017,WEIGHT,Weight,88.0,kg,2024-05-24,3,
+SUBJ-017,HEIGHT,Height,180.0,cm,2024-05-24,3,
+SUBJ-018,SYSBP,Systolic blood pressure,133.0,mmHg,2024-04-01,1,Y
+SUBJ-018,DIABP,Diastolic blood pressure,82.0,mmHg,2024-04-01,1,Y
+SUBJ-018,HR,Heart rate,83.0,bpm,2024-04-01,1,Y
+SUBJ-018,TEMP,Temperature,36.9,degC,2024-04-01,1,Y
+SUBJ-018,WEIGHT,Weight,67.0,kg,2024-04-01,1,Y
+SUBJ-018,HEIGHT,Height,179.0,cm,2024-04-01,1,Y
+SUBJ-018,SYSBP,Systolic blood pressure,125.0,mmHg,2024-04-29,2,
+SUBJ-018,DIABP,Diastolic blood pressure,73.0,mmHg,2024-04-29,2,
+SUBJ-018,HR,Heart rate,75.0,bpm,2024-04-29,2,
+SUBJ-018,TEMP,Temperature,36.5,degC,2024-04-29,2,
+SUBJ-018,WEIGHT,Weight,69.0,kg,2024-04-29,2,
+SUBJ-018,HEIGHT,Height,180.0,cm,2024-04-29,2,
+SUBJ-018,SYSBP,Systolic blood pressure,117.0,mmHg,2024-05-27,3,
+SUBJ-018,DIABP,Diastolic blood pressure,85.0,mmHg,2024-05-27,3,
+SUBJ-018,HR,Heart rate,67.0,bpm,2024-05-27,3,
+SUBJ-018,TEMP,Temperature,36.6,degC,2024-05-27,3,
+SUBJ-018,WEIGHT,Weight,71.0,kg,2024-05-27,3,
+SUBJ-018,HEIGHT,Height,181.0,cm,2024-05-27,3,
+SUBJ-019,SYSBP,Systolic blood pressure,136.0,mmHg,2024-04-04,1,Y
+SUBJ-019,DIABP,Diastolic blood pressure,85.0,mmHg,2024-04-04,1,Y
+SUBJ-019,HR,Heart rate,86.0,bpm,2024-04-04,1,Y
+SUBJ-019,TEMP,Temperature,36.5,degC,2024-04-04,1,Y
+SUBJ-019,WEIGHT,Weight,70.0,kg,2024-04-04,1,Y
+SUBJ-019,HEIGHT,Height,180.0,cm,2024-04-04,1,Y
+SUBJ-019,SYSBP,Systolic blood pressure,131.0,mmHg,2024-05-02,2,
+SUBJ-019,DIABP,Diastolic blood pressure,79.0,mmHg,2024-05-02,2,
+SUBJ-019,HR,Heart rate,81.0,bpm,2024-05-02,2,
+SUBJ-019,TEMP,Temperature,36.6,degC,2024-05-02,2,
+SUBJ-019,WEIGHT,Weight,75.0,kg,2024-05-02,2,
+SUBJ-019,HEIGHT,Height,181.0,cm,2024-05-02,2,
+SUBJ-019,SYSBP,Systolic blood pressure,126.0,mmHg,2024-05-30,3,
+SUBJ-019,DIABP,Diastolic blood pressure,73.0,mmHg,2024-05-30,3,
+SUBJ-019,HR,Heart rate,76.0,bpm,2024-05-30,3,
+SUBJ-019,TEMP,Temperature,36.7,degC,2024-05-30,3,
+SUBJ-019,WEIGHT,Weight,80.0,kg,2024-05-30,3,
+SUBJ-019,HEIGHT,Height,182.0,cm,2024-05-30,3,
+SUBJ-020,SYSBP,Systolic blood pressure,139.0,mmHg,2024-04-07,1,Y
+SUBJ-020,DIABP,Diastolic blood pressure,88.0,mmHg,2024-04-07,1,Y
+SUBJ-020,HR,Heart rate,89.0,bpm,2024-04-07,1,Y
+SUBJ-020,TEMP,Temperature,36.6,degC,2024-04-07,1,Y
+SUBJ-020,WEIGHT,Weight,73.0,kg,2024-04-07,1,Y
+SUBJ-020,HEIGHT,Height,181.0,cm,2024-04-07,1,Y
+SUBJ-020,SYSBP,Systolic blood pressure,137.0,mmHg,2024-05-05,2,
+SUBJ-020,DIABP,Diastolic blood pressure,85.0,mmHg,2024-05-05,2,
+SUBJ-020,HR,Heart rate,87.0,bpm,2024-05-05,2,
+SUBJ-020,TEMP,Temperature,36.7,degC,2024-05-05,2,
+SUBJ-020,WEIGHT,Weight,81.0,kg,2024-05-05,2,
+SUBJ-020,HEIGHT,Height,182.0,cm,2024-05-05,2,
+SUBJ-020,SYSBP,Systolic blood pressure,135.0,mmHg,2024-06-02,3,
+SUBJ-020,DIABP,Diastolic blood pressure,82.0,mmHg,2024-06-02,3,
+SUBJ-020,HR,Heart rate,85.0,bpm,2024-06-02,3,
+SUBJ-020,TEMP,Temperature,36.8,degC,2024-06-02,3,
+SUBJ-020,WEIGHT,Weight,89.0,kg,2024-06-02,3,
+SUBJ-020,HEIGHT,Height,183.0,cm,2024-06-02,3,
