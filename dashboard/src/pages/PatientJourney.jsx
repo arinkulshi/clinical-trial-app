@@ -60,8 +60,9 @@ export default function PatientJourney() {
     error: patientsError,
     refetch: refetchPatients,
   } = useFhirQuery(
-    () => (selectedStudyId ? fhirApi.getStudyPatients(selectedStudyId) : null),
-    [selectedStudyId]
+    () => fhirApi.getStudyPatients(selectedStudyId),
+    [selectedStudyId],
+    { enabled: Boolean(selectedStudyId) }
   );
 
   // Parse patient list
@@ -87,8 +88,9 @@ export default function PatientJourney() {
     error: timelineError,
     refetch: refetchTimeline,
   } = useFhirQuery(
-    () => (selectedPatientId ? fhirApi.getPatientTimeline(selectedPatientId) : null),
-    [selectedPatientId]
+    () => fhirApi.getPatientTimeline(selectedPatientId),
+    [selectedPatientId],
+    { enabled: Boolean(selectedPatientId) }
   );
 
   // Parse timeline data

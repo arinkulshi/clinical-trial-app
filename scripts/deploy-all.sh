@@ -9,6 +9,48 @@ PROJECT_ID="ai-poc-project-483817"
 REGION="us-west1"
 REPO="clinical-trial-repo"
 REGISTRY="us-west1-docker.pkg.dev/${PROJECT_ID}/${REPO}"
+CONNECTION_NAME="${PROJECT_ID}:${REGION}:clinical-trial-db"
+DASHBOARD_URL="https://clinical-trial-dashboard-232355346494.${REGION}.run.app"
+CORS_ORIGINS="${DASHBOARD_URL},http://localhost:5173,http://localhost:3000"
+CLOUD_SQL_PUBLIC_IP="${CLOUD_SQL_PUBLIC_IP:-$(gcloud sql instances describe clinical-trial-db --project "${PROJECT_ID}" --format='value(ipAddresses[0].ipAddress)' 2>/dev/null || true)}"
+
+if [ -z "${CLOUD_SQL_PUBLIC_IP}" ]; then
+  echo "ERROR: Could not determine Cloud SQL public IP for clinical-trial-db." >&2
+  echo "Set CLOUD_SQL_PUBLIC_IP and rerun: CLOUD_SQL_PUBLIC_IP=x.x.x.x bash scripts/deploy-all.sh" >&2
+  exit 1
+fi
+
+BACKEND_ENV_FILE="$(mktemp)"
+HAPI_ENV_FILE="$(mktemp)"
+trap 'rm -f "${BACKEND_ENV_FILE}" "${HAPI_ENV_FILE}"' EXIT
+
+wait_for_url() {
+  local url="$1"
+  local label="$2"
+  for _ in $(seq 1 60); do
+    if curl -sf "${url}" >/dev/null; then
+      return 0
+    fi
+    sleep 5
+  done
+  echo "ERROR: ${label} did not become ready: ${url}" >&2
+  return 1
+}
+
+verify_cors() {
+  local url="$1"
+  local origin="$2"
+  for _ in $(seq 1 15); do
+    if curl -sS -D - -o /dev/null -H "Origin: ${origin}" "${url}" \
+      | tr -d '\r' \
+      | grep -Fq "access-control-allow-origin: ${origin}"; then
+      return 0
+    fi
+    sleep 2
+  done
+  echo "ERROR: CORS header for ${origin} was not returned by ${url}" >&2
+  return 1
+}
 
 echo "=============================================="
 echo "  Clinical Trial FHIR Dashboard — Full Deploy"
@@ -32,21 +74,31 @@ docker build -t "${HAPI_IMAGE}" ./hapi-fhir/
 
 docker push "${HAPI_IMAGE}"
 
+cat > "${HAPI_ENV_FILE}" <<EOF
+spring.datasource.url: "jdbc:postgresql://${CLOUD_SQL_PUBLIC_IP}:5432/hapi_fhir"
+spring.datasource.username: "fhir_user"
+hapi.fhir.cors.allowed_origin_patterns: "*"
+EOF
+
 gcloud run deploy hapi-fhir-server \
   --image "${HAPI_IMAGE}" \
   --region "${REGION}" \
   --platform managed \
   --port 8080 \
-  --memory 1Gi \
-  --cpu 1 \
+  --memory 2Gi \
+  --cpu 2 \
+  --cpu-boost \
   --min-instances 0 \
   --max-instances 2 \
-  --set-env-vars "spring.datasource.url=jdbc:postgresql://localhost:5432/hapi_fhir" \
-  --set-env-vars "hapi.fhir.cors.allowed_origin_patterns=*" \
+  --timeout 600 \
+  --env-vars-file "${HAPI_ENV_FILE}" \
+  --set-secrets "spring.datasource.password=clinical-trial-db-password:latest" \
+  --add-cloudsql-instances "${CONNECTION_NAME}" \
   --allow-unauthenticated
 
 FHIR_URL=$(gcloud run services describe hapi-fhir-server --region "${REGION}" --format 'value(status.url)')
 echo "FHIR Server URL: ${FHIR_URL}/fhir"
+wait_for_url "${FHIR_URL}/fhir/metadata" "FHIR metadata"
 
 # -------------------------------------------------------
 # 2. Deploy FastAPI Backend
@@ -59,6 +111,15 @@ docker build -t "${BACKEND_IMAGE}" -f ./backend/Dockerfile .
 
 docker push "${BACKEND_IMAGE}"
 
+cat > "${BACKEND_ENV_FILE}" <<EOF
+CT_FHIR_SERVER_URL: "${FHIR_URL}/fhir"
+CT_GCS_BUCKET: "ai-poc-project-483817-clinical-uploads"
+CT_CORS_ORIGINS: "${CORS_ORIGINS}"
+CT_LLM_PROVIDER: "gemini"
+CT_GEMINI_MODEL: "gemini-2.5-flash-lite"
+CT_ASSISTANT_DEMO_MODE: "false"
+EOF
+
 gcloud run deploy clinical-trial-backend \
   --image "${BACKEND_IMAGE}" \
   --region "${REGION}" \
@@ -68,17 +129,15 @@ gcloud run deploy clinical-trial-backend \
   --cpu 1 \
   --min-instances 0 \
   --max-instances 2 \
-  --set-env-vars "CT_FHIR_SERVER_URL=${FHIR_URL}/fhir" \
-  --set-env-vars "CT_GCS_BUCKET=ai-poc-project-483817-clinical-uploads" \
-  --set-env-vars 'CT_CORS_ORIGINS=["*"]' \
-  --set-env-vars "CT_LLM_PROVIDER=gemini" \
-  --set-env-vars "CT_GEMINI_MODEL=gemini-2.5-flash-lite" \
-  --set-env-vars "CT_ASSISTANT_DEMO_MODE=false" \
+  --env-vars-file "${BACKEND_ENV_FILE}" \
   --set-secrets "CT_GEMINI_API_KEY=gemini-api-key:latest" \
   --allow-unauthenticated
 
 BACKEND_URL=$(gcloud run services describe clinical-trial-backend --region "${REGION}" --format 'value(status.url)')
 echo "Backend URL: ${BACKEND_URL}"
+wait_for_url "${BACKEND_URL}/health" "backend health"
+wait_for_url "${BACKEND_URL}/api/datasets" "datasets endpoint"
+verify_cors "${BACKEND_URL}/api/datasets" "${DASHBOARD_URL}"
 
 # -------------------------------------------------------
 # 3. Deploy React Dashboard
@@ -101,6 +160,8 @@ gcloud run deploy clinical-trial-dashboard \
   --min-instances 0 \
   --max-instances 2 \
   --set-env-vars "BACKEND_URL=${BACKEND_URL}" \
+  --set-env-vars "DASHBOARD_USER=admin" \
+  --set-env-vars "DASHBOARD_PASSWORD=clinicaltrial2024" \
   --allow-unauthenticated
 
 DASHBOARD_URL=$(gcloud run services describe clinical-trial-dashboard --region "${REGION}" --format 'value(status.url)')

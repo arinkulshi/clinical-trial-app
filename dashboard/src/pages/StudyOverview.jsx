@@ -21,7 +21,8 @@ export default function StudyOverview() {
     refetch: refetchPatients,
   } = useFhirQuery(
     useCallback(() => fhirApi.getStudyPatients(selectedStudyId), [selectedStudyId]),
-    [selectedStudyId]
+    [selectedStudyId],
+    { enabled: Boolean(selectedStudyId) }
   );
 
   const {
@@ -31,7 +32,8 @@ export default function StudyOverview() {
     refetch: refetchAE,
   } = useFhirQuery(
     useCallback(() => fhirApi.getStudyAdverseEvents(selectedStudyId), [selectedStudyId]),
-    [selectedStudyId]
+    [selectedStudyId],
+    { enabled: Boolean(selectedStudyId) }
   );
 
   if (!selectedStudyId) {

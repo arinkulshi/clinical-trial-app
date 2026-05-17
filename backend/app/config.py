@@ -1,5 +1,6 @@
 """Environment-based configuration for the FastAPI backend."""
 
+import json
 from functools import lru_cache
 from typing import Any
 
@@ -53,7 +54,11 @@ class Settings(BaseSettings):
     @classmethod
     def parse_cors(cls, v: Any) -> list[str]:
         if isinstance(v, str):
-            return [s.strip() for s in v.split(",")]
+            value = v.strip()
+            if value.startswith("["):
+                parsed = json.loads(value)
+                return [str(origin).strip() for origin in parsed if str(origin).strip()]
+            return [s.strip() for s in value.split(",") if s.strip()]
         return v
 
     model_config = {"env_prefix": "CT_", "env_file": ".env", "extra": "ignore"}

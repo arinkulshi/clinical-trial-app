@@ -34,10 +34,11 @@ export default function SafetyDashboard() {
     refetch: refetchPatients,
   } = useFhirQuery(
     useCallback(
-      () => selectedStudyId ? fhirApi.getStudyPatients(selectedStudyId) : Promise.resolve(null),
+      () => fhirApi.getStudyPatients(selectedStudyId),
       [selectedStudyId]
     ),
-    [selectedStudyId]
+    [selectedStudyId],
+    { enabled: Boolean(selectedStudyId) }
   );
 
   // Fetch adverse events
@@ -48,10 +49,11 @@ export default function SafetyDashboard() {
     refetch: refetchAE,
   } = useFhirQuery(
     useCallback(
-      () => selectedStudyId ? fhirApi.getStudyAdverseEvents(selectedStudyId) : Promise.resolve(null),
+      () => fhirApi.getStudyAdverseEvents(selectedStudyId),
       [selectedStudyId]
     ),
-    [selectedStudyId]
+    [selectedStudyId],
+    { enabled: Boolean(selectedStudyId) }
   );
 
   // Fetch lab observations
@@ -62,10 +64,11 @@ export default function SafetyDashboard() {
     refetch: refetchLab,
   } = useFhirQuery(
     useCallback(
-      () => selectedStudyId ? fhirApi.getStudyObservations(selectedStudyId, 'laboratory', 5000) : Promise.resolve(null),
+      () => fhirApi.getStudyObservations(selectedStudyId, 'laboratory', 5000),
       [selectedStudyId]
     ),
-    [selectedStudyId]
+    [selectedStudyId],
+    { enabled: Boolean(selectedStudyId) }
   );
 
   // Fetch vital sign observations
@@ -76,10 +79,11 @@ export default function SafetyDashboard() {
     refetch: refetchVitals,
   } = useFhirQuery(
     useCallback(
-      () => selectedStudyId ? fhirApi.getStudyObservations(selectedStudyId, 'vital-signs', 5000) : Promise.resolve(null),
+      () => fhirApi.getStudyObservations(selectedStudyId, 'vital-signs', 5000),
       [selectedStudyId]
     ),
-    [selectedStudyId]
+    [selectedStudyId],
+    { enabled: Boolean(selectedStudyId) }
   );
 
   // Parse patient arms
