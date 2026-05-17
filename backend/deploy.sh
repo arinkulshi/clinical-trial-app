@@ -12,7 +12,7 @@ IMAGE="us-west1-docker.pkg.dev/${PROJECT_ID}/${REPO}/backend:latest"
 SERVICE_NAME="clinical-trial-backend"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"
-DASHBOARD_URL="${DASHBOARD_URL:-https://clinical-trial-dashboard-232355346494.us-west1.run.app}"
+DASHBOARD_URL="${DASHBOARD_URL:-https://clinical-trial-dashboard-jz6ndrvnja-uw.a.run.app}"
 CORS_ORIGINS="${CORS_ORIGINS:-${DASHBOARD_URL},http://localhost:5173,http://localhost:3000}"
 
 # FHIR server URL — set by the master deploy script, manually, or discovered.

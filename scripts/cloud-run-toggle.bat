@@ -10,7 +10,7 @@ REM ============================================================================
 set REGION=us-west1
 set PROJECT_ID=ai-poc-project-483817
 set REGISTRY=us-west1-docker.pkg.dev/ai-poc-project-483817/clinical-trial-repo
-set DASHBOARD_URL=https://clinical-trial-dashboard-232355346494.us-west1.run.app
+set DASHBOARD_URL=https://clinical-trial-dashboard-jz6ndrvnja-uw.a.run.app
 set CORS_ORIGINS=%DASHBOARD_URL%,http://localhost:5173,http://localhost:3000
 set CONNECTION_NAME=%PROJECT_ID%:%REGION%:clinical-trial-db
 

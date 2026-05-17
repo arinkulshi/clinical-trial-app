@@ -12,7 +12,7 @@ REGION="us-west1"
 PROJECT_ID="ai-poc-project-483817"
 REGISTRY="us-west1-docker.pkg.dev/ai-poc-project-483817/clinical-trial-repo"
 SERVICES=("hapi-fhir-server" "clinical-trial-backend" "clinical-trial-dashboard")
-DASHBOARD_URL="https://clinical-trial-dashboard-232355346494.${REGION}.run.app"
+DASHBOARD_URL="https://clinical-trial-dashboard-jz6ndrvnja-uw.a.run.app"
 CORS_ORIGINS="${DASHBOARD_URL},http://localhost:5173,http://localhost:3000"
 CONNECTION_NAME="${PROJECT_ID}:${REGION}:clinical-trial-db"
 

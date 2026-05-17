@@ -10,7 +10,7 @@ REGION="us-west1"
 REPO="clinical-trial-repo"
 REGISTRY="us-west1-docker.pkg.dev/${PROJECT_ID}/${REPO}"
 CONNECTION_NAME="${PROJECT_ID}:${REGION}:clinical-trial-db"
-DASHBOARD_URL="https://clinical-trial-dashboard-232355346494.${REGION}.run.app"
+DASHBOARD_URL="https://clinical-trial-dashboard-jz6ndrvnja-uw.a.run.app"
 CORS_ORIGINS="${DASHBOARD_URL},http://localhost:5173,http://localhost:3000"
 CLOUD_SQL_PUBLIC_IP="${CLOUD_SQL_PUBLIC_IP:-$(gcloud sql instances describe clinical-trial-db --project "${PROJECT_ID}" --format='value(ipAddresses[0].ipAddress)' 2>/dev/null || true)}"
 
