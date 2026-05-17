@@ -8,7 +8,7 @@ def build_transaction_bundle(
     entries: list[tuple[str, dict]],
 ) -> dict:
     """
-    Build a FHIR Transaction Bundle from a list of (fullUrl, resource) tuples.
+    Build a FHIR Transaction Bundles from a list of (fullUrl, resource) tuples.
 
     Each entry becomes a Bundle.entry with request method POST.
     """
