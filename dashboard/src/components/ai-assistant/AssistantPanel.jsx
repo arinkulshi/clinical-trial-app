@@ -6,11 +6,12 @@ import { useStudy } from '../../hooks/useStudy';
 import ChatMessage from './ChatMessage';
 
 const STARTERS = [
-  'Compare Grade 3+ adverse events by arm',
-  'What were the most common adverse events in each arm?',
-  'Show patients with ALT greater than 3x ULN',
+  'What safety signal should I look at first?',
+  'Which arm has more Grade 3+ toxicity?',
+  'Show the most common adverse events by arm.',
+  'Find patients with ALT greater than 3x ULN.',
   'Do CHEMO patients show more neutropenia?',
-  'Find a patient with an immune-related adverse event',
+  'Find a patient journey worth reviewing for an immune-related AE.',
 ];
 
 function pageName(pathname) {
@@ -59,6 +60,8 @@ export default function AssistantPanel() {
           content: response.answer,
           queryPlan: response.query_plan,
           display: response.display,
+          evidence: response.evidence,
+          actions: response.actions,
           sources: response.sources,
           mode: response.mode,
         },

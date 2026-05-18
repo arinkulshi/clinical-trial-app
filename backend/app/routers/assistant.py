@@ -52,6 +52,8 @@ class AssistantChatResponse(BaseModel):
     answer: str
     query_plan: list[ToolCall]
     display: dict[str, Any] | None = None
+    evidence: dict[str, Any] | None = None
+    actions: list[dict[str, Any]] = Field(default_factory=list)
     sources: list[str] = Field(default_factory=list)
     mode: str = "deterministic_fallback"
 
@@ -650,6 +652,191 @@ def _chart_display(title: str, rows: list[dict[str, Any]], value_key: str) -> di
     }
 
 
+def _patient_rate(row: dict[str, Any], value_key: str = "affected_patients") -> str:
+    return f"{row.get(value_key, 0)}/{row.get('total_patients', 0)} ({row.get('rate', '0%')})"
+
+
+def _higher_arm(rows: list[dict[str, Any]], value_key: str = "affected_patients") -> str | None:
+    if len(rows) < 2:
+        return None
+    ranked = sorted(rows, key=lambda row: row.get(value_key, 0), reverse=True)
+    if ranked[0].get(value_key, 0) == ranked[1].get(value_key, 0):
+        return None
+    return ranked[0].get("arm")
+
+
+def _format_event_list(events: list[dict[str, Any]], limit: int = 3) -> str:
+    top = events[:limit]
+    if not top:
+        return "no events returned"
+    return ", ".join(f"{event['term']} ({event['count']})" for event in top)
+
+
+def _evidence_card(title: str, items: list[dict[str, Any]]) -> dict[str, Any]:
+    return {"title": title, "items": items}
+
+
+def _source_item(sources: list[str]) -> dict[str, str]:
+    return {"label": "FHIR sources", "value": ", ".join(sources) if sources else "None returned"}
+
+
+def _patient_id_from_ref(patient_ref: str | None) -> str | None:
+    if not patient_ref:
+        return None
+    return patient_ref.split("/")[-1]
+
+
+def _patient_journey_action(patient_ref: str | None, label: str = "Open Patient Journey") -> dict[str, Any] | None:
+    patient_id = _patient_id_from_ref(patient_ref)
+    if not patient_id:
+        return None
+    return {
+        "type": "open_patient_journey",
+        "label": label,
+        "patient_id": patient_id,
+    }
+
+
+def _deterministic_evidence(results: list[dict[str, Any]], sources: list[str]) -> dict[str, Any] | None:
+    if not results:
+        return None
+
+    result = results[0]
+    metric = result.get("metric")
+
+    if metric == "grade3_or_higher_ae_by_arm":
+        rows = result["rows"]
+        items = [
+            {
+                "label": row["arm"],
+                "value": f"{row['affected_patients']}/{row['total_patients']}",
+                "detail": row["rate"],
+            }
+            for row in rows
+        ]
+        top_terms = [
+            f"{row['arm']}: {_format_event_list(row.get('top_events', []), 2)}"
+            for row in rows
+            if row.get("top_events")
+        ]
+        if top_terms:
+            items.append({"label": "Top Grade 3+ terms", "value": "; ".join(top_terms)})
+        items.append(_source_item(sources))
+        return _evidence_card("Evidence", items)
+
+    if metric == "top_adverse_events_by_arm":
+        items = [
+            {"label": arm_row["arm"], "value": _format_event_list(arm_row.get("events", []), 3)}
+            for arm_row in result["rows"]
+        ]
+        items.append(_source_item(sources))
+        return _evidence_card("Evidence", items)
+
+    if metric == "alt_gt_3x_uln":
+        rows = result.get("rows", [])
+        items = [{"label": "Patients over threshold", "value": str(result.get("count", 0))}]
+        if rows:
+            peak = rows[0]
+            items.extend(
+                [
+                    {"label": "Highest returned patient", "value": peak["patient"], "detail": peak["arm"]},
+                    {
+                        "label": "Peak ALT",
+                        "value": str(peak["alt"]),
+                        "detail": f"{peak['multiple_of_uln']}x ULN on {peak['date']}",
+                    },
+                ]
+            )
+        items.append(_source_item(sources))
+        return _evidence_card("Evidence", items)
+
+    if metric == "neutropenia_by_arm":
+        items = [
+            {
+                "label": row["arm"],
+                "value": f"{row['affected_patients']}/{row['total_patients']}",
+                "detail": f"{row['rate']} low ANC",
+            }
+            for row in result["rows"]
+        ]
+        worst_values = [
+            f"{row['arm']}: {row['worst_anc']}"
+            for row in result["rows"]
+            if row.get("worst_anc") is not None
+        ]
+        if worst_values:
+            items.append({"label": "Worst ANC returned", "value": "; ".join(worst_values)})
+        items.append(_source_item(sources))
+        return _evidence_card("Evidence", items)
+
+    if metric == "patient_with_immune_related_ae":
+        if not result.get("patient"):
+            return _evidence_card("Evidence", [_source_item(sources)])
+        return _evidence_card(
+            "Evidence",
+            [
+                {"label": "Patient", "value": result["patient"], "detail": result.get("arm")},
+                {
+                    "label": "Immune-related AE",
+                    "value": result.get("event") or "Unknown",
+                    "detail": f"Grade {result.get('grade')} on {result.get('date')}",
+                },
+                _source_item(sources),
+            ],
+        )
+
+    if metric == "safety_summary_by_arm":
+        grade_rows = result["grade3_ae"]["rows"]
+        anc_rows = result["neutropenia"]["rows"]
+        items = [
+            {
+                "label": "Grade 3+ AE",
+                "value": " vs ".join(f"{row['arm']} {_patient_rate(row)}" for row in grade_rows),
+            },
+            {
+                "label": "Low ANC",
+                "value": " vs ".join(f"{row['arm']} {_patient_rate(row)}" for row in anc_rows),
+            },
+            {"label": "ALT >3x ULN", "value": f"{result['alt_gt_3x_uln']['count']} patients"},
+            _source_item(sources),
+        ]
+        return _evidence_card("Evidence", items)
+
+    if metric == "study_patients":
+        items = [
+            {"label": row["arm"], "value": f"{row['patients']} patients"}
+            for row in result.get("arms", [])
+        ]
+        items.append({"label": "Total", "value": f"{result.get('total', 0)} patients"})
+        items.append(_source_item(sources))
+        return _evidence_card("Evidence", items)
+
+    return _evidence_card("Evidence", [_source_item(sources)])
+
+
+def _deterministic_actions(results: list[dict[str, Any]]) -> list[dict[str, Any]]:
+    if not results:
+        return []
+
+    result = results[0]
+    metric = result.get("metric")
+    actions: list[dict[str, Any]] = []
+
+    if metric == "patient_with_immune_related_ae":
+        action = _patient_journey_action(result.get("patient"), "Open Patient Journey")
+        if action:
+            actions.append(action)
+
+    if metric == "alt_gt_3x_uln":
+        rows = result.get("rows", [])
+        if rows:
+            action = _patient_journey_action(rows[0].get("patient"), "Open highest ALT patient")
+            if action:
+                actions.append(action)
+
+    return actions
+
+
 def _deterministic_answer(question: str, results: list[dict[str, Any]]) -> tuple[str, dict[str, Any] | None]:
     if not results:
         return _unsupported_response(question)
@@ -659,11 +846,14 @@ def _deterministic_answer(question: str, results: list[dict[str, Any]]) -> tuple
 
     if metric == "grade3_or_higher_ae_by_arm":
         rows = result["rows"]
-        answer_parts = [
-            f"{row['arm']}: {row['affected_patients']} of {row['total_patients']} patients ({row['rate']})"
-            for row in rows
-        ]
-        answer = "Grade 3 or higher adverse events by arm: " + "; ".join(answer_parts) + "."
+        summary = " vs ".join(f"{row['arm']} {_patient_rate(row)}" for row in rows)
+        higher = _higher_arm(rows)
+        signal = (
+            f"The {higher} arm shows the higher observed Grade 3+ AE burden in this synthetic study dataset."
+            if higher
+            else "The observed Grade 3+ AE burden is similar across arms in this synthetic study dataset."
+        )
+        answer = f"Grade 3+ adverse events were observed in {summary}. {signal}"
         display = _table_display(
             "Grade 3+ adverse events by arm",
             ["Arm", "Patients", "Patients with Grade 3+ AE", "Rate"],
@@ -676,12 +866,9 @@ def _deterministic_answer(question: str, results: list[dict[str, Any]]) -> tuple
         table_rows = []
         for arm_row in result["rows"]:
             top = arm_row["events"][:5]
-            lines.append(
-                f"{arm_row['arm']}: "
-                + ", ".join(f"{event['term']} ({event['count']})" for event in top)
-            )
+            lines.append(f"{arm_row['arm']}: {_format_event_list(top)}")
             table_rows.extend([[arm_row["arm"], event["term"], event["count"]] for event in top])
-        return "Most common adverse events by arm: " + "; ".join(lines) + ".", _table_display(
+        return "The most frequently observed adverse events by arm were " + "; ".join(lines) + ".", _table_display(
             "Top adverse events by arm",
             ["Arm", "Event", "Count"],
             table_rows,
@@ -692,9 +879,10 @@ def _deterministic_answer(question: str, results: list[dict[str, Any]]) -> tuple
         if not rows:
             return "No patients had ALT values greater than 3x ULN in the returned study data.", None
         return (
-            f"{result['count']} patients had ALT greater than 3x ULN. "
-            f"The highest returned value was {rows[0]['alt']} ({rows[0]['multiple_of_uln']}x ULN) "
-            f"in {rows[0]['patient']} on the {rows[0]['arm']} arm.",
+            f"ALT greater than 3x ULN was observed in {result['count']} patients. "
+            f"The highest returned peak was {rows[0]['alt']} ({rows[0]['multiple_of_uln']}x ULN) "
+            f"for {rows[0]['patient']} on the {rows[0]['arm']} arm on {rows[0]['date']}. "
+            "These cases are useful for focused hepatic safety review in the synthetic dataset.",
             _table_display(
                 "Patients with ALT > 3x ULN",
                 ["Patient", "Arm", "Peak ALT", "ULN", "x ULN", "Date"],
@@ -707,10 +895,14 @@ def _deterministic_answer(question: str, results: list[dict[str, Any]]) -> tuple
 
     if metric == "neutropenia_by_arm":
         rows = result["rows"]
-        answer = "Low ANC/neutropenia signal by arm: " + "; ".join(
-            f"{row['arm']}: {row['affected_patients']} of {row['total_patients']} patients ({row['rate']})"
-            for row in rows
-        ) + "."
+        summary = " vs ".join(f"{row['arm']} {_patient_rate(row)}" for row in rows)
+        higher = _higher_arm(rows)
+        signal = (
+            f"The {higher} arm has the higher observed low ANC signal."
+            if higher
+            else "The observed low ANC signal is similar across arms."
+        )
+        answer = f"Low ANC/neutropenia was observed in {summary}. {signal}"
         return answer, _chart_display("Patients with low ANC by arm", rows, "affected_patients")
 
     if metric == "patient_with_immune_related_ae":
@@ -718,7 +910,8 @@ def _deterministic_answer(question: str, results: list[dict[str, Any]]) -> tuple
             return "I did not find an immune-related adverse event in the returned study data.", None
         return (
             f"A useful patient journey example is {result['patient']} on the {result['arm']} arm, "
-            f"with {result['event']} Grade {result['grade']} on {result['date']}.",
+            f"with {result['event']} Grade {result['grade']} on {result['date']}. "
+            "This is a good candidate for timeline review because it connects an immune-related AE to a specific patient context.",
             _table_display(
                 "Patient with immune-related AE",
                 ["Patient", "Arm", "Event", "Grade", "Date"],
@@ -730,12 +923,26 @@ def _deterministic_answer(question: str, results: list[dict[str, Any]]) -> tuple
         grade_rows = result["grade3_ae"]["rows"]
         anc_rows = result["neutropenia"]["rows"]
         alt_count = result["alt_gt_3x_uln"]["count"]
+        grade_higher = _higher_arm(grade_rows)
+        anc_higher = _higher_arm(anc_rows)
+        signal_parts = []
+        if grade_higher:
+            signal_parts.append(f"Grade 3+ AE burden is higher in {grade_higher}")
+        if anc_higher:
+            signal_parts.append(f"low ANC is higher in {anc_higher}")
+        lead = (
+            "Key safety signal: " + ", while ".join(signal_parts) + ". "
+            if signal_parts
+            else "Key safety signal: the major arm-level safety rates are similar in the returned data. "
+        )
         answer = (
-            "Safety summary: Grade 3+ AE rates were "
-            + "; ".join(f"{row['arm']} {row['rate']}" for row in grade_rows)
+            lead
+            + "Grade 3+ AE rates were "
+            + " vs ".join(f"{row['arm']} {_patient_rate(row)}" for row in grade_rows)
             + ". Low ANC rates were "
-            + "; ".join(f"{row['arm']} {row['rate']}" for row in anc_rows)
-            + f". ALT >3x ULN was observed in {alt_count} patients."
+            + " vs ".join(f"{row['arm']} {_patient_rate(row)}" for row in anc_rows)
+            + f". ALT >3x ULN was observed in {alt_count} patients. "
+            "These are directional synthetic-data signals for review, not statistical conclusions."
         )
         return answer, _table_display(
             "Safety summary by arm",
@@ -806,10 +1013,14 @@ async def chat(req: AssistantChatRequest):
             for source in result.get("sources", [])
         }
     )
+    evidence = _deterministic_evidence(results, sources)
+    actions = _deterministic_actions(results)
     return AssistantChatResponse(
         answer=answer,
         query_plan=calls,
         display=display,
+        evidence=evidence,
+        actions=actions,
         sources=sources,
         mode=answer_mode,
     )

@@ -1,4 +1,5 @@
-import React, { useState, useMemo, useCallback } from 'react';
+import React, { useState, useMemo, useCallback, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { UserSearch } from 'lucide-react';
 import { useStudy } from '../hooks/useStudy';
 import { useFhirQuery } from '../hooks/useFhirQuery';
@@ -48,6 +49,7 @@ function isOutOfRange(obs) {
 
 export default function PatientJourney() {
   const { selectedStudyId } = useStudy();
+  const [searchParams] = useSearchParams();
   const [selectedPatientId, setSelectedPatientId] = useState(null);
   const [modalEvent, setModalEvent] = useState(null);
   const [modalType, setModalType] = useState('ae');
@@ -80,6 +82,16 @@ export default function PatientJourney() {
         };
       });
   }, [patientListData]);
+
+  useEffect(() => {
+    const patientFromUrl = searchParams.get('patient');
+    if (!patientFromUrl || !patients.length) return;
+
+    const matchingPatient = patients.find((patient) => patient.id === patientFromUrl);
+    if (matchingPatient && matchingPatient.id !== selectedPatientId) {
+      setSelectedPatientId(matchingPatient.id);
+    }
+  }, [patients, searchParams, selectedPatientId]);
 
   // Fetch timeline for selected patient
   const {
